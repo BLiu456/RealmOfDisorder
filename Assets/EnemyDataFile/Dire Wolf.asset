@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 569f10c689b8a0c4db9794c2481db991, type: 3}
-  m_Name: Goblin
+  m_Name: Dire Wolf
   m_EditorClassIdentifier: 
-  health: 5
-  power: 3
-  speed: 3
+  health: 3
+  power: 5
+  speed: 10
   dropRate: 1
