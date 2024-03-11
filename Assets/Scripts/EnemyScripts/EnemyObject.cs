@@ -9,6 +9,7 @@ public abstract class EnemyObject : MonoBehaviour
     public int power = 1;
     public int speed = 1;
     public int dropRate = 1;
+    public int cost = 1;
 
     public EnemyData data;
 
@@ -23,6 +24,13 @@ public abstract class EnemyObject : MonoBehaviour
         power = data.power;
         speed = data.speed;
         dropRate = data.dropRate;
+        cost = data.cost;
+    }
+
+    public int getCost() 
+    {
+        //This function is primarily used by the spawner
+        return data.cost;
     }
 
     public virtual void movement(){}

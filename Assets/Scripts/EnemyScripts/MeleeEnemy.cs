@@ -25,7 +25,7 @@ public class MeleeEnemy : EnemyObject
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            this.GetComponent<Health>().damaged(power);
+            this.GetComponent<Health>().damaged(power); //For now make it so that the enemies also get hurt when they collide with player
 
             if (this.GetComponent<Health>().isAlive == false)
             {
@@ -36,6 +36,6 @@ public class MeleeEnemy : EnemyObject
 
     public override void onDeath()
     {
-        Debug.Log("Something is dead");
+        Destroy(gameObject);
     }
 }
