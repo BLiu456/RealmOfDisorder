@@ -5,9 +5,9 @@ using UnityEngine;
 public class MeleeEnemy : EnemyObject
 {
     // Start is called before the first frame update
-    public void Start()
+    public void Awake()
     {
-        base.Start();
+        base.Awake();
     }
 
     // Update is called once per frame
@@ -36,6 +36,18 @@ public class MeleeEnemy : EnemyObject
 
     public override void onDeath()
     {
+        int dropped = Random.Range(1, 101); //Get range from 1 - 100
+
+        if (dropped <= dropRate)
+        {
+            GameObject dropItem = this.GetComponent<LootTable>().selectLoot();
+
+            if (dropItem != null)
+            {
+                GameObject lootObject = Instantiate(dropItem, transform.position, Quaternion.identity); //Drops an item where enemy died
+            }
+        }
+
         Destroy(gameObject);
     }
 }

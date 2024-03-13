@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 69286685437418435}
   - component: {fileID: 8556948013050824244}
   - component: {fileID: 2780976998258090891}
+  - component: {fileID: 6789424700897758619}
   m_Layer: 0
   m_Name: Ogre
   m_TagString: Enemy
@@ -102,6 +103,7 @@ MonoBehaviour:
   power: 1
   speed: 1
   dropRate: 1
+  cost: 1
   data: {fileID: 11400000, guid: 9cd502eebb4f14446a626de436b9c28f, type: 2}
   player: {fileID: 0}
 --- !u!114 &8556948013050824244
@@ -164,3 +166,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6789424700897758619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568826585488071980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97121cb65bef3f449cc3473a0ab43f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot:
+  - {fileID: 3100206191265629490, guid: c32f7e17d1b053c4daa95c8f4a76f707, type: 3}

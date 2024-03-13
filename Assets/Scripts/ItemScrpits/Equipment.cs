@@ -11,9 +11,10 @@ public abstract class Equipment : ItemObject
         if (other.gameObject.CompareTag("Player"))
         {
             //Pick up into inventory logic goes here
-
+            
             //After picking up, activate effect of equipment
             this.effect();
+            Destroy(gameObject);
         }
     }
 

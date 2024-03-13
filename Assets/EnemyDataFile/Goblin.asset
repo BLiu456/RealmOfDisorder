@@ -16,3 +16,4 @@ MonoBehaviour:
   power: 3
   speed: 3
   dropRate: 1
+  cost: 0
