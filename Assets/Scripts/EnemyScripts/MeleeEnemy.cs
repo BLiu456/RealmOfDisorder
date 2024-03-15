@@ -23,9 +23,9 @@ public class MeleeEnemy : EnemyObject
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player")) //Later change tag to player's attack rather than the player itself
         {
-            this.GetComponent<Health>().damaged(power); //For now make it so that the enemies also get hurt when they collide with player
+            this.GetComponent<Health>().damaged(power); //For now make it so that the enemies also get hurt when they collide with player got testing purposes
 
             if (this.GetComponent<Health>().isAlive == false)
             {

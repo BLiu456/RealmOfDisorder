@@ -6,7 +6,7 @@ public abstract class Equipment : ItemObject
 {
     public float level = 1f;
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {

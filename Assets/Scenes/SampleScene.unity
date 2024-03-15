@@ -6416,7 +6416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e2ba2e821098e4b9c0dbea13711493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 3
+  maxHp: 10
   basePower: 1
   effectivePower: 1
   bulletCoolDown: 0.2

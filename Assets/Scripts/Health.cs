@@ -14,6 +14,16 @@ public class Health : MonoBehaviour
         maxHP = currentHP;
     }
 
+    public int getCurrentHp()
+    {
+        return currentHP;
+    }
+
+    public int getMaxHp()
+    {
+        return maxHP;
+    }
+
     public void setHealthValues(int currHP, int maxHp)
     {
         this.currentHP = currHP;
