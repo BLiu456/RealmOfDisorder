@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int startHp;
-    int hp;
+    public int maxHp = 3;
+    public int basePower = 1;
+    public int effectivePower = 1;
     public float bulletCoolDown;
 
     float bulletTimer;
 
     void Start()
     {
-        
+        GetComponent<Health>().setHealthValues(maxHp, maxHp);
     }
 
     // Update is called once per frame
@@ -23,10 +24,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Bullet" && bulletTimer <= 0)
+        if (collision.tag == "Enemy") //&& bulletTimer <= 0)
         {
-            hp -= 1;
+            Debug.Log("Player took damage");
+            this.GetComponent<Health>().damaged(1);
             bulletTimer = bulletCoolDown;
         }
     }
+
+
 }
