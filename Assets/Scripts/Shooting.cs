@@ -12,13 +12,20 @@ public class Shooting : MonoBehaviour
     private float timer;
     public float timeBetweenFiring;
 
+    //Data for the bullets
+    public string ownerTag = ""; //The entity who is doing the shooting (Player_Atk or Enemey_Atk)
+    public string targetTag = ""; //The target the entity is trying to damge (Player or Enemy)
+    public int bulletPower = 1;
+
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        bullet.tag = ownerTag;
+        bullet.GetComponent<Bullet>().setTarget(targetTag);
+        bullet.GetComponent<Bullet>().setPower(bulletPower);
     }
 
-    // Update is called once per frame
     void Update()
     {
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -44,5 +51,11 @@ public class Shooting : MonoBehaviour
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
         }
+    }
+
+    public void updatePower(int amount)
+    {
+        bulletPower = amount;
+        bullet.GetComponent<Bullet>().setPower(bulletPower);
     }
 }

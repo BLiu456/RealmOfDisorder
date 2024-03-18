@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     private Vector3 mousePos;
     private Camera mainCam;
     private Rigidbody2D rb;
     private float timer;
+    public string targetTag; //Target of the bullet (i.e. the player wants to target enemies)
     public float force;
     public float lifetime;
+    public int power = 1;
     
-    // Start is called before the first frame update
     void Start()
     {
         timer = 0f;
+
+        //Calculate the direction the bullet will move towards
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -25,7 +28,6 @@ public class BulletScript : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot + 90); // delete if don't want bullet rotation towards mouse
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
@@ -33,5 +35,28 @@ public class BulletScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag(targetTag))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public int applyDamage()
+    {
+        return power;
+    }
+
+    public void setPower(int amount)
+    {
+        power = amount;
+    }
+
+    public void setTarget(string target)
+    {
+        targetTag = target;
     }
 }

@@ -5,32 +5,45 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int maxHp = 3;
-    public int basePower = 1;
+    public int basePower = 5;
     public int effectivePower = 1;
-    public float bulletCoolDown;
+    //public float bulletCoolDown; Maybe repurpose this to attack speed
 
     float bulletTimer;
 
     void Start()
     {
+        effectivePower = basePower;
         GetComponent<Health>().setHealthValues(maxHp, maxHp);
+        setPower();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        bulletTimer -= Time.deltaTime;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy") //&& bulletTimer <= 0)
+        if (collision.tag == "Enemy")
         {
-            Debug.Log("Player took damage");
-            this.GetComponent<Health>().damaged(1);
-            bulletTimer = bulletCoolDown;
+            EnemyObject enemyComp = collision.GetComponent<EnemyObject>();
+            this.GetComponent<Health>().damaged(enemyComp.applyDamage());
+        }
+
+        if (this.GetComponent<Health>().isAlive == false)
+        {
+            //Handle how player dies here
         }
     }
 
+    public void setPower()
+    {
+        Component[] x = GetComponentsInChildren<Shooting>();
 
+        foreach (Shooting i in x)
+        {
+            i.updatePower(effectivePower);
+        }
+    }
 }

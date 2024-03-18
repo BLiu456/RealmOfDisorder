@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public abstract class EnemyObject : MonoBehaviour
+public class EnemyObject : MonoBehaviour
 {
     //If any of the stats can not be loaded, 1 will be the default value
     public int power = 1;
@@ -32,9 +32,41 @@ public abstract class EnemyObject : MonoBehaviour
         return data.cost;
     }
 
+    public int applyDamage()
+    {
+        return power;
+    }
+
     public virtual void movement(){}
 
-    public virtual void OnTriggerEnter2D(Collider2D other) {}
+    public void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.gameObject.CompareTag("Player_Atk"))
+        {
+            Bullet bullComp = other.GetComponent<Bullet>();
+            this.GetComponent<Health>().damaged(bullComp.applyDamage());
 
-    public virtual void onDeath(){}
+            if (this.GetComponent<Health>().isAlive == false)
+            {
+                onDeath();
+            }
+        }
+    }
+
+    public virtual void onDeath()
+    {
+        int dropped = Random.Range(1, 101); //Get range from 1 - 100
+
+        if (dropped <= dropRate)
+        {
+            GameObject dropItem = this.GetComponent<LootTable>().selectLoot();
+
+            if (dropItem != null)
+            {
+                GameObject lootObject = Instantiate(dropItem, transform.position, Quaternion.identity); //Drops an item where enemy died
+            }
+        }
+
+        Destroy(gameObject);
+    }
 }
