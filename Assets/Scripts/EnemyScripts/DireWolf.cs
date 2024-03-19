@@ -10,6 +10,7 @@ public class DireWolf : MeleeEnemy
     void Awake()
     {
         base.Awake();
+        scaleSpd();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -38,5 +39,11 @@ public class DireWolf : MeleeEnemy
             yield return null;
             rotateTime += Time.deltaTime;
         }
+    }
+
+    public void scaleSpd()
+    {
+        float lvl = gm.GetComponent<GameMaster>().getLvl();
+        speed = speed + (int)(3f * lvl);
     }
 }

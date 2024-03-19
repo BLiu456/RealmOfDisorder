@@ -8,19 +8,13 @@ public class Player : MonoBehaviour
     public int basePower = 5;
     public int effectivePower = 1;
     //public float bulletCoolDown; Maybe repurpose this to attack speed
-
-    float bulletTimer;
+    //float bulletTimer;
 
     void Start()
     {
         effectivePower = basePower;
         GetComponent<Health>().setHealthValues(maxHp, maxHp);
-        setPower();
-    }
-
-    void Update()
-    {
-        
+        setProjPower();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,7 +31,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void setPower()
+    public void setProjPower()
     {
         Component[] x = GetComponentsInChildren<Shooting>();
 

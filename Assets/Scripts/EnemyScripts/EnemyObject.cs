@@ -6,35 +6,51 @@ using UnityEngine;
 public class EnemyObject : MonoBehaviour
 {
     //If any of the stats can not be loaded, 1 will be the default value
-    public int power = 1;
+    public int baseHp = 1;
+    public int effHp;
+    public int basePwr = 1;
+    public int effPwr;
     public int speed = 1;
     public int dropRate = 1;
     public int cost = 1;
 
     public EnemyData data;
 
-    public GameObject player; 
+    public GameObject player;
+
+    public GameObject gm;
 
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        gm = GameObject.FindGameObjectWithTag("GameManager");
 
-        GetComponent<Health>().setHealthValues(data.health, data.health);
-        power = data.power;
+        baseHp = data.health;
+        basePwr = data.power;
         speed = data.speed;
         dropRate = data.dropRate;
         cost = data.cost;
+
+        scaleStats();
     }
 
     public int getCost() 
     {
-        //This function is primarily used by the spawner
-        return data.cost;
+        return cost;
     }
 
     public int applyDamage()
     {
-        return power;
+        return effPwr;
+    }
+
+    public void scaleStats()
+    {
+        float lvl = gm.GetComponent<GameMaster>().getLvl();
+        effHp = (int)((float)baseHp * (1f + (0.5f * lvl)));
+        effPwr = (int)((float)basePwr * (1f + (0.5f * lvl)));
+
+        GetComponent<Health>().setHealthValues(effHp, effHp);
     }
 
     public virtual void movement(){}
