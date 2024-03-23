@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public bool[] isFull;
-    public GameObject[] slots;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject[] slots; 
 
-    // Update is called once per frame
-    void Update()
+   
+    public bool AddItem(GameObject item)
     {
-        
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].transform.childCount == 0)
+            {
+                Instantiate(item, slots[i].transform, false);
+                return true; 
+            }
+        }
+        return false;
     }
 }
+
