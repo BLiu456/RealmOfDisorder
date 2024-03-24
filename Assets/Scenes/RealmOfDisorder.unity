@@ -483,7 +483,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &156542407
 Transform:
@@ -1199,7 +1199,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &711178148
 Transform:
@@ -7853,7 +7853,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1163450585
 Transform:
@@ -7981,7 +7981,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588a2e2b5e07e1d4bbe1337683930c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  moveSpeed: 5
+  rb: {fileID: 0}
+  dashSpeed: 10
+  dashDuration: 1
+  dashCooldown: 1
 --- !u!114 &1336660852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8117,7 +8121,7 @@ MonoBehaviour:
   - {fileID: 2054387449}
   - {fileID: 685214539}
   - {fileID: 2121406882}
-  - {fileID: 441453664}
+  - {fileID: 0}
   - {fileID: 1334030006}
   - {fileID: 1531033177}
 --- !u!1001 &1368373459
@@ -8351,7 +8355,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1443169864
 MonoBehaviour:
@@ -9083,7 +9087,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1833149779
 Transform:
