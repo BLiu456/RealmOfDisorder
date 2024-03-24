@@ -7889,6 +7889,11 @@ MonoBehaviour:
   swordUIPrefab: {fileID: 1624921819}
   buffAmount: 0
   buffModifier: 0.1
+--- !u!1 &1269664902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4372239634255587514, guid: 99804772a22534848b4d1e23687cd306, type: 3}
+  m_PrefabInstance: {fileID: 1882114550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1334030006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4372239634255587514, guid: 99804772a22534848b4d1e23687cd306, type: 3}
@@ -7982,7 +7987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rb: {fileID: 0}
+  rb: {fileID: 1336660855}
   dashSpeed: 10
   dashDuration: 1
   dashCooldown: 1
@@ -8121,7 +8126,7 @@ MonoBehaviour:
   - {fileID: 2054387449}
   - {fileID: 685214539}
   - {fileID: 2121406882}
-  - {fileID: 0}
+  - {fileID: 1269664902}
   - {fileID: 1334030006}
   - {fileID: 1531033177}
 --- !u!1001 &1368373459
