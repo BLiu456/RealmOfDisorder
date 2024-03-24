@@ -1,17 +1,17 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.19f1 (244b723c30a6) revision 2378610'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 16266 MB
+OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 7599 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Unity.exe
+C:\Users\yulia\OneDrive\Desktop\2022.3.19f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/benja/Unity Projects/RealmOfDisorder
+C:/Users/yulia/OneDrive/Desktop/RealmOfDisorder
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
@@ -57,15 +57,15 @@ Player connection [17896] Host "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 3812
 Refreshing native plugins compatible for Editor in 5314.18 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.19f1 (244b723c30a6)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.19f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/benja/Unity Projects/RealmOfDisorder/Assets
+[Subsystems] Discovering subsystems at path C:/Users/yulia/OneDrive/Desktop/2022.3.19f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/yulia/OneDrive/Desktop/RealmOfDisorder/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce MX150 (ID=0x1d10)
+    Renderer: NVIDIA GeForce MX350 (ID=0x1c96)
     Vendor:   NVIDIA
-    VRAM:     1968 MB
-    Driver:   31.0.15.5161
+    VRAM:     1979 MB
+    Driver:   27.21.14.6259
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.19f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
@@ -78,7 +78,6 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.19f1/
 Registered in 0.988097 seconds.
 - Loaded All Assemblies, in 23.690 seconds
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  1.081 seconds
 Domain Reload Profiling: 24761ms
@@ -120,7 +119,6 @@ Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in 25.965 seconds
 Refreshing native plugins compatible for Editor in 24.68 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
@@ -188,14 +186,13 @@ Received Import Request.
   artifactKey: Guid(be1bbe9619f5c9242a46d89688cc1113) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/EnemyScripts/Skeleton.cs using Guid(be1bbe9619f5c9242a46d89688cc1113) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d2ccc35cd590f8d1c1b4c440b319d98') in 0.012717 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 8
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in  2.282 seconds
 Refreshing native plugins compatible for Editor in 21.94 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
@@ -261,7 +258,6 @@ Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in  1.255 seconds
 Refreshing native plugins compatible for Editor in 14.45 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
@@ -327,7 +323,6 @@ Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in  1.264 seconds
 Refreshing native plugins compatible for Editor in 21.68 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
@@ -459,7 +454,6 @@ Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in  1.256 seconds
 Refreshing native plugins compatible for Editor in 14.57 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
