@@ -168,13 +168,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20d879bd4198ed4dbf1eb453ab31a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3026378165288658046, guid: 54f4742b9fb99214699b1c1b12e6ee7d, type: 3}
+  proj: {fileID: 3026378165288658046, guid: 54f4742b9fb99214699b1c1b12e6ee7d, type: 3}
   bulletTransform: {fileID: 567977605}
   canFire: 1
   timeBetweenFiring: 0.3
   ownerTag: Player_Atk
   targetTag: Enemy
-  bulletPower: 1
+  rangePower: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6969,7 +6969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84832fc003d2124ea061418dc32b3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  world_lvl: 2
+  world_lvl: 0
   spawnCredit: 10
   spawn: {fileID: 1778767395}
 --- !u!1 &1975566622

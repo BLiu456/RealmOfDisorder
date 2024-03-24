@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Stats")]
     public int maxHp = 3;
     public int basePower = 5;
     public int effectivePower = 1;
@@ -23,6 +24,11 @@ public class Player : MonoBehaviour
         {
             EnemyObject enemyComp = collision.GetComponent<EnemyObject>();
             this.GetComponent<Health>().damaged(enemyComp.applyDamage());
+        }
+        else if (collision.tag == "Enemy_Atk")
+        {
+            Projectile projComp = collision.GetComponent<Projectile>();
+            this.GetComponent<Health>().damaged(projComp.applyDamage());
         }
 
         if (this.GetComponent<Health>().isAlive == false)

@@ -6,7 +6,7 @@ public class Shooting : MonoBehaviour
 {
     private Camera mainCam;
     private Vector3 mousePos;
-    public GameObject bullet;
+    public GameObject proj;
     public Transform bulletTransform;
     public bool canFire;
     private float timer;
@@ -15,15 +15,15 @@ public class Shooting : MonoBehaviour
     //Data for the bullets
     public string ownerTag = ""; //The entity who is doing the shooting (Player_Atk or Enemey_Atk)
     public string targetTag = ""; //The target the entity is trying to damge (Player or Enemy)
-    public int bulletPower = 1;
+    public int rangePower = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        bullet.tag = ownerTag;
-        bullet.GetComponent<Bullet>().setTarget(targetTag);
-        bullet.GetComponent<Bullet>().setPower(bulletPower);
+        proj.tag = ownerTag;
+        proj.GetComponent<Projectile>().setTarget(targetTag);
+        proj.GetComponent<Projectile>().setPower(rangePower);
     }
 
     void Update()
@@ -49,13 +49,22 @@ public class Shooting : MonoBehaviour
         if (Input.GetMouseButton(0) && canFire)
         {
             canFire = false;
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+
+            //Aim attack towards mouse
+            proj.GetComponent<Projectile>().setDir(mousePos - bulletTransform.position);
+            proj.GetComponent<Projectile>().setRot(bulletTransform.position - mousePos);
+            GameObject proj_instance = Instantiate(proj, bulletTransform.position, Quaternion.identity);
+
+            //Set properties of the attack
+            proj_instance.tag = ownerTag;
+            proj_instance.GetComponent<Projectile>().setTarget(targetTag);
+            proj_instance.GetComponent<Projectile>().setPower(rangePower);
         }
     }
 
     public void updatePower(int amount)
     {
-        bulletPower = amount;
-        bullet.GetComponent<Bullet>().setPower(bulletPower);
+        rangePower = amount;
+        proj.GetComponent<Projectile>().setPower(rangePower);
     }
 }

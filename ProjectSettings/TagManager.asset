@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Player_Atk
   - GameManager
+  - Enemy_Atk
   layers:
   - Default
   - TransparentFX

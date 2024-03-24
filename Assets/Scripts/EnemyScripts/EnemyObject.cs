@@ -53,14 +53,12 @@ public class EnemyObject : MonoBehaviour
         GetComponent<Health>().setHealthValues(effHp, effHp);
     }
 
-    public virtual void movement(){}
-
     public void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.CompareTag("Player_Atk"))
         {
-            Bullet bullComp = other.GetComponent<Bullet>();
-            this.GetComponent<Health>().damaged(bullComp.applyDamage());
+            Projectile projComp = other.GetComponent<Projectile>();
+            this.GetComponent<Health>().damaged(projComp.applyDamage());
 
             if (this.GetComponent<Health>().isAlive == false)
             {
