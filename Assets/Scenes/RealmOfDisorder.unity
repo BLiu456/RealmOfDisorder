@@ -567,7 +567,7 @@ MonoBehaviour:
   proj: {fileID: 3026378165288658046, guid: 54f4742b9fb99214699b1c1b12e6ee7d, type: 3}
   bulletTransform: {fileID: 567977605}
   canFire: 1
-  timeBetweenFiring: 0.3
+  timeBetweenFiring: 1
   ownerTag: Player_Atk
   targetTag: Enemy
   rangePower: 1
@@ -8521,7 +8521,8 @@ MonoBehaviour:
   effectiveHp: 10
   basePower: 5
   effectivePower: 5
-  lvl: {fileID: 1336660858}
+  atkCD: 1
+  shoot: {fileID: 262259765}
 --- !u!4 &1336660853
 Transform:
   m_ObjectHideFlags: 0

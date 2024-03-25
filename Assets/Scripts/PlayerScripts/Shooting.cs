@@ -67,4 +67,9 @@ public class Shooting : MonoBehaviour
         rangePower = amount;
         proj.GetComponent<Projectile>().setPower(rangePower);
     }
+
+    public void setAtkCD(float x)
+    {
+        timeBetweenFiring = x;
+    }
 }

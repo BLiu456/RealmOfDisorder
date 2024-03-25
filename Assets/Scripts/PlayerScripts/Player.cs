@@ -5,15 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Stats")]
-    public int baseHp = 3;
-    public int effectiveHp = 3;
+    public int baseHp = 10;
+    public int effectiveHp = 10;
     public int basePower = 5;
     public int effectivePower = 5;
-    //public float bulletCoolDown; Maybe repurpose this to attack speed
-    //float bulletTimer;
+    public float atkCD; //Attack Cooldown
 
     [SerializeField]
-    private PlayerLevel lvl;
+    private Shooting shoot;
 
     void Start()
     {
@@ -21,7 +20,9 @@ public class Player : MonoBehaviour
         effectiveHp = baseHp;
         GetComponent<Health>().setHealthValues(effectiveHp, effectiveHp);
         this.GetComponent<HealthUI>().changeBar();
-        setProjPower();
+
+        shoot.setAtkCD(atkCD);
+        shoot.updatePower(effectivePower);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,16 +49,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void setProjPower()
-    {
-        Component[] x = GetComponentsInChildren<Shooting>();
-
-        foreach (Shooting i in x)
-        {
-            i.updatePower(effectivePower);
-        }
-    }
-
     public void calcEffHp()
     {
         /*Will do some complicated formula later but for now
@@ -70,7 +61,7 @@ public class Player : MonoBehaviour
     public void calcEffPower()
     {
         effectivePower = basePower;
-        setProjPower();
+        shoot.updatePower(effectivePower);
     }
 
     public void scaleStats(int level)
