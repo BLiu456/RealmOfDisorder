@@ -101,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 5
   force: 5
-  power: 5
-  dir: {x: -10.959476, y: 16.470001, z: 0}
-  rot: {x: 10.959476, y: -16.470001, z: 0}
+  power: 11
+  dir: {x: -11.982527, y: 3.3103714, z: -10}
+  rot: {x: 11.982527, y: -3.3103714, z: 10}
   targetTag: Enemy
 --- !u!50 &5834355990904859365
 Rigidbody2D:

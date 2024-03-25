@@ -61,4 +61,8 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
+    public bool getDashState()
+    {
+        return isDashing;
+    }
 }

@@ -11,6 +11,7 @@ public class EnemyObject : MonoBehaviour
     public int basePwr = 1;
     public int effPwr;
     public int speed = 1;
+    public int exp = 1;
     public int dropRate = 1;
     public int cost = 1;
 
@@ -28,6 +29,7 @@ public class EnemyObject : MonoBehaviour
         baseHp = data.health;
         basePwr = data.power;
         speed = data.speed;
+        exp = data.exp;
         dropRate = data.dropRate;
         cost = data.cost;
 
@@ -69,6 +71,8 @@ public class EnemyObject : MonoBehaviour
 
     public virtual void onDeath()
     {
+        player.GetComponent<PlayerLevel>().addExp(exp);
+
         int dropped = Random.Range(1, 101); //Get range from 1 - 100
 
         if (dropped <= dropRate)
