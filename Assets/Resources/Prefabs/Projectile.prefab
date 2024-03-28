@@ -102,8 +102,8 @@ MonoBehaviour:
   lifetime: 5
   force: 5
   power: 5
-  dir: {x: 8.398095, y: -9.231217, z: -10}
-  rot: {x: -8.398095, y: 9.231217, z: 10}
+  dir: {x: 2.2184334, y: 2.206215, z: -10}
+  rot: {x: -2.2184334, y: -2.206215, z: 10}
   size: {x: 0, y: 0, z: 0}
   sprite: {fileID: 0}
   targetTag: Enemy
