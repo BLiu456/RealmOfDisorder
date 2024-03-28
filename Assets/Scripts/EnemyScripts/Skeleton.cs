@@ -6,6 +6,7 @@ public class Skeleton : RangeEnemy
 {
     private float timer;
     private bool canFire;
+    private bool canMove;
     public float fireTiming;
 
     public GameObject projectile;
@@ -14,30 +15,16 @@ public class Skeleton : RangeEnemy
     {
         timer = 0f;
         canFire = true;
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        shoot();
-        base.movement();
-    }
-
-    public override void shoot()
-    {
         if (canFire)
         {
             canFire = false;
-
-            //Direct attack towards player
-            projectile.GetComponent<Projectile>().setDir(player.transform.position - transform.position);
-            projectile.GetComponent<Projectile>().setRot(transform.position - player.transform.position);
-            GameObject proj_instance = Instantiate(projectile, transform.position, Quaternion.identity);
-
-            //Set properties of the attack
-            proj_instance.tag = "Enemy_Atk";
-            proj_instance.GetComponent<Projectile>().setTarget("Player");
-            proj_instance.GetComponent<Projectile>().setPower(this.effPwr);
+            StartCoroutine(atk_behavior());
         }
         else
         {
@@ -48,5 +35,32 @@ public class Skeleton : RangeEnemy
                 timer = 0;
             }
         }
+
+        if (canMove)
+        {
+            base.movement();
+        }
+    }
+
+    public override void shoot()
+    {
+        //Direct attack towards player
+        projectile.GetComponent<Projectile>().setDir(player.transform.position - transform.position);
+        projectile.GetComponent<Projectile>().setRot(transform.position - player.transform.position);
+        GameObject proj_instance = Instantiate(projectile, transform.position, Quaternion.identity);
+
+        //Set properties of the attack
+        proj_instance.tag = "Enemy_Atk";
+        proj_instance.GetComponent<Projectile>().setTarget("Player");
+        proj_instance.GetComponent<Projectile>().setPower(this.effPwr);
+    }
+
+    private IEnumerator atk_behavior()
+    {
+        canMove = false;
+        yield return new WaitForSeconds(1);
+        shoot();
+        yield return new WaitForSeconds(1);
+        canMove = true;
     }
 }
