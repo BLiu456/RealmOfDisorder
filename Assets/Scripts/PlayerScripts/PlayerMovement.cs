@@ -35,12 +35,15 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && canDash)
         {
-            StartCoroutine(Dash());
-            Stamina -= DashCost;
-            if(Stamina < 0) Stamina = 0;
-            StaminaBar.fillAmount = Stamina / MaxStamina;
-            if(recharge != null) StopCoroutine(recharge);
-            recharge = StartCoroutine(RechargeStamina());
+            if(Stamina >= DashCost)
+            {
+                StartCoroutine(Dash());
+                Stamina -= DashCost;
+                if(Stamina < 0) Stamina = 0;
+                StaminaBar.fillAmount = Stamina / MaxStamina;
+                if(recharge != null) StopCoroutine(recharge);
+                recharge = StartCoroutine(RechargeStamina());
+            }
         }
         moveDir = new Vector2(moveX,moveY).normalized;
 
@@ -66,8 +69,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private IEnumerator RechargeStamina()
     {
+        yield return new WaitForSeconds(1.5f);
         while(Stamina < MaxStamina){
-            Stamina += ChargeRate;
+            Stamina += ChargeRate / 10f;
             if(Stamina > MaxStamina) Stamina = MaxStamina;
             StaminaBar.fillAmount = Stamina / MaxStamina;
             yield return new WaitForSeconds(.1f);
