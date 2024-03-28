@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Sword : Equipment
 {
-    public GameObject swordUIPrefab;
     public float buffAmount = 0f;
     public float buffModifier = 0.1f;
 
@@ -33,4 +32,5 @@ public class Sword : Equipment
 
         }
     }
+
 }

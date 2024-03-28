@@ -102,8 +102,8 @@ MonoBehaviour:
   lifetime: 5
   force: 5
   power: 5
-  dir: {x: 26.298567, y: 12.508123, z: 0}
-  rot: {x: -26.298567, y: -12.508123, z: 0}
+  dir: {x: 3.949959, y: 4.526353, z: 0}
+  rot: {x: -3.949959, y: -4.526353, z: 0}
   targetTag: Enemy
 --- !u!50 &5834355990904859365
 Rigidbody2D:
