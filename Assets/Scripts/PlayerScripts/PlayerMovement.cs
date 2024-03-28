@@ -33,7 +33,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && canDash)
         {
-            StartCoroutine(Dash());
+            if (Stamina >= DashCost)
+            {
+                StartCoroutine(Dash());
+                Stamina -= DashCost;
+                if (Stamina < 0) Stamina = 0;
+                StaminaBar.fillAmount = Stamina / MaxStamina;
+                if (recharge != null) StopCoroutine(recharge);
+                recharge = StartCoroutine(RechargeStamina());
+            }
         }
 
         moveDir = new Vector2(moveX, moveY).normalized;
@@ -56,11 +64,21 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
-        
+
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
-
+    private IEnumerator RechargeStamina()
+    {
+        yield return new WaitForSeconds(1.5f);
+        while (Stamina < MaxStamina)
+        {
+            Stamina += ChargeRate / 10f;
+            if (Stamina > MaxStamina) Stamina = MaxStamina;
+            StaminaBar.fillAmount = Stamina / MaxStamina;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
     public bool getDashState()
     {
         return isDashing;
