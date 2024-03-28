@@ -65,4 +65,9 @@ public class PlayerMovement : MonoBehaviour
     {
         return isDashing;
     }
+
+    public void setSpeed(float v)
+    {
+        moveSpeed = v;
+    }
 }

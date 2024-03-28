@@ -12,9 +12,13 @@ public class Projectile : MonoBehaviour
     public float force;
     public int power = 1;
 
-    [Header("Positioning")]
+    [Header("Properties")]
     public Vector3 dir;
     public Vector3 rot;
+    public Vector3 size;
+
+    [Header("Sprite")]
+    public Sprite sprite;
 
     [Header("Tags")]
     public string targetTag;
@@ -24,6 +28,11 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         timer = 0f;
+
+        if (sprite != null)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = sprite;
+        }
 
         //Calculate the direction the bullet will move towards
         rb = GetComponent<Rigidbody2D>();

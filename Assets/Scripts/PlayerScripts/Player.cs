@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Shooting shoot;
 
+    [SerializeField]
+    private GameMaster gm;
+
     void Start()
     {
         effectivePower = basePower;
@@ -27,7 +30,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (this.GetComponent<PlayerMovement>().getDashState() == false)
+        if (!this.GetComponent<PlayerMovement>().getDashState() && this.GetComponent<Health>().isAlive)
         {
             if (collision.tag == "Enemy")
             {
@@ -42,9 +45,11 @@ public class Player : MonoBehaviour
                 this.GetComponent<HealthUI>().changeBar();
             }
 
-            if (this.GetComponent<Health>().isAlive == false)
+            if (!this.GetComponent<Health>().isAlive)
             {
-                //Handle how player dies here
+                gm.GetComponent<GameOver>().gameOver();
+                this.GetComponent<PlayerMovement>().setSpeed(0);
+                GameObject.FindGameObjectWithTag("RotatePoint").SetActive(false);
             }
         }
     }

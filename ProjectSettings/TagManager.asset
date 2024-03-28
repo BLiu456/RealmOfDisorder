@@ -8,6 +8,7 @@ TagManager:
   - Player_Atk
   - GameManager
   - Enemy_Atk
+  - RotatePoint
   layers:
   - Default
   - TransparentFX
