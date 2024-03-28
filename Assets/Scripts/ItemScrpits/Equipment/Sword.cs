@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Sword : Equipment
 {
-    public GameObject swordUIPrefab;
     public float buffAmount = 0f;
     public float buffModifier = 0.1f;
 
@@ -24,7 +23,7 @@ public class Sword : Equipment
         {
             //Pick up into inventory logic goes here
             Inventory inventory = other.GetComponent<Inventory>();
-            if (inventory != null && inventory.AddItem(swordUIPrefab)) 
+            if (inventory != null && inventory.AddItem(this)) 
             {
                 Destroy(gameObject); 
             }
