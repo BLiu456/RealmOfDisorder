@@ -7,7 +7,7 @@ public abstract class ItemObject : MonoBehaviour
     public string name;
     public string desc;
     public Sprite sprite;
-    public GameObject uiPrefab;
+    
     public virtual void OnTriggerEnter2D(Collider2D other) { }
 
     public virtual void effect() { }
