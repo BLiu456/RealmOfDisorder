@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -28.45, y: -1.95, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 925ea898852023c41a6044501adbb467, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   basePwr: 1
   effPwr: 0
   speed: 1
+  exp: 1
   dropRate: 1
   cost: 1
   data: {fileID: 11400000, guid: 4a738fdf2b058354bbd074276d0eb998, type: 2}
@@ -112,6 +113,7 @@ MonoBehaviour:
   gm: {fileID: 0}
   fireTiming: 6
   projectile: {fileID: 3026378165288658046, guid: 54f4742b9fb99214699b1c1b12e6ee7d, type: 3}
+  atkSprite: {fileID: 21300000, guid: faba46edbe82ea94580948195319b642, type: 3}
 --- !u!114 &7326229892126200156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,16 +176,16 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.042001724, y: 0.00840044}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.848793, y: 1.2520137}
   m_EdgeRadius: 0

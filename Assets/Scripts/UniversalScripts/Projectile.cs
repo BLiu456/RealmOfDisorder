@@ -92,4 +92,10 @@ public class Projectile : MonoBehaviour
     {
         rot = turn;
     }
+
+    public void setSprite(Sprite sp)
+    {
+        sprite = sp;
+        this.GetComponent<SpriteRenderer>().sprite = sprite;
+    }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   power: 3
-  speed: 4
+  speed: 5
   exp: 1
   dropRate: 3
   cost: 2

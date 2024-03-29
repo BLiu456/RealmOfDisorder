@@ -18,7 +18,7 @@ public class Sword : Equipment
         return buffAmount;
     }
 
-    public override void OnTriggerEnter2D(Collider2D other)
+/*    public override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -30,5 +30,5 @@ public class Sword : Equipment
             }
 
         }
-    }
+    }*/
 }

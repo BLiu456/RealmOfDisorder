@@ -9,16 +9,17 @@ public class Heart : ItemObject
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Inventory inventory = other.GetComponent<Inventory>();
-            if (inventory != null && inventory.AddItem(heartUIPrefab)) 
+            Health hlth = other.GetComponent<Health>();
+            HealthUI hlthUI = other.GetComponent<HealthUI>();
+            if (hlth != null) 
             {
+                effect(hlth);
+                hlthUI.changeBar();
                 Destroy(gameObject); 
             }
         }
-
-
     }
-    public void Use(Health playerHealth)
+    public void effect(Health playerHealth)
     {
         int healAmount = playerHealth.getMaxHp() / 2;
         playerHealth.healed(healAmount);

@@ -13,8 +13,7 @@ public abstract class Equipment : ItemObject
             //Pick up into inventory logic goes here
             Inventory inventory = other.GetComponent<Inventory>(); 
             if (inventory != null && inventory.AddItem(gameObject))
-            {
-                
+            {        
                 this.effect();
                 Destroy(gameObject);
             }
