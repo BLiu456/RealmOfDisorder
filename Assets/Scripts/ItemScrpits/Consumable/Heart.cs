@@ -11,11 +11,11 @@ public class Heart : ItemObject
         {
             Health hlth = other.GetComponent<Health>();
             HealthUI hlthUI = other.GetComponent<HealthUI>();
-            if (hlth != null) 
+            if (hlth != null)
             {
                 effect(hlth);
                 hlthUI.changeBar();
-                Destroy(gameObject); 
+                Destroy(gameObject);
             }
         }
     }

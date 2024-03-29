@@ -369,6 +369,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2302997450180935510, guid: 99804772a22534848b4d1e23687cd306, type: 3}
   m_PrefabInstance: {fileID: 89584782}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &101752190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4372239634255587514, guid: 99804772a22534848b4d1e23687cd306, type: 3}
+  m_PrefabInstance: {fileID: 1882114550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &156542403
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +488,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!4 &156542407
 Transform:
@@ -515,8 +520,8 @@ MonoBehaviour:
   name: 
   desc: 
   sprite: {fileID: 21300000, guid: e8f848f02803766409d41f33da7ce640, type: 3}
+  uiPrefab: {fileID: 1624921819}
   level: 1
-  swordUIPrefab: {fileID: 1624921819}
   buffAmount: 0
   buffModifier: 0.1
 --- !u!1 &262259763
@@ -1598,7 +1603,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!4 &711178148
 Transform:
@@ -1630,8 +1635,8 @@ MonoBehaviour:
   name: 
   desc: 
   sprite: {fileID: 21300000, guid: e8f848f02803766409d41f33da7ce640, type: 3}
+  uiPrefab: {fileID: 1624921819}
   level: 1
-  swordUIPrefab: {fileID: 1624921819}
   buffAmount: 0
   buffModifier: 0.1
 --- !u!1 &731889008
@@ -8650,8 +8655,8 @@ MonoBehaviour:
   name: 
   desc: 
   sprite: {fileID: 21300000, guid: e8f848f02803766409d41f33da7ce640, type: 3}
+  uiPrefab: {fileID: 1624921819}
   level: 1
-  swordUIPrefab: {fileID: 1624921819}
   buffAmount: 0
   buffModifier: 0.1
 --- !u!1 &1224521928
@@ -8973,8 +8978,7 @@ MonoBehaviour:
   - {fileID: 2054387449}
   - {fileID: 685214539}
   - {fileID: 2121406882}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 101752190}
   - {fileID: 1334030006}
   - {fileID: 1531033177}
 --- !u!114 &1336660858
@@ -9375,7 +9379,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!114 &1443169864
 MonoBehaviour:
@@ -9392,8 +9396,8 @@ MonoBehaviour:
   name: 
   desc: 
   sprite: {fileID: 21300000, guid: e8f848f02803766409d41f33da7ce640, type: 3}
+  uiPrefab: {fileID: 1624921819}
   level: 1
-  swordUIPrefab: {fileID: 1624921819}
   buffAmount: 0
   buffModifier: 0.1
 --- !u!1 &1496162795
@@ -10528,7 +10532,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!4 &1833149779
 Transform:
@@ -10560,8 +10564,8 @@ MonoBehaviour:
   name: 
   desc: 
   sprite: {fileID: 21300000, guid: e8f848f02803766409d41f33da7ce640, type: 3}
+  uiPrefab: {fileID: 1624921819}
   level: 1
-  swordUIPrefab: {fileID: 1624921819}
   buffAmount: 0
   buffModifier: 0.1
 --- !u!1001 &1835618065
