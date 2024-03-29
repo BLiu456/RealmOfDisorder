@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2224777477894110888}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Player_Atk
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.6975446, y: 2.5379088, z: -0.2051919}
-  m_LocalScale: {x: 0.2, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.48078763, y: 0.96157527, z: 2.403938}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9433962, g: 0.4435903, b: 0.022249907, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.97735846, g: 0.97735846, b: 0.97735846, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,9 +101,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 5
   force: 5
-  power: 1
-  dir: {x: 25.681684, y: 13.516912, z: 0}
-  rot: {x: -25.681684, y: -13.516912, z: 0}
+  power: 5
+  dir: {x: 7.002495, y: -1.2686186, z: -10}
+  rot: {x: -7.002495, y: 1.2686186, z: 10}
+  size: {x: 0, y: 0, z: 0}
+  sprite: {fileID: 21300000, guid: faba46edbe82ea94580948195319b642, type: 3}
   targetTag: Enemy
 --- !u!50 &5834355990904859365
 Rigidbody2D:
@@ -164,7 +166,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0000023245811, y: 0.003668189}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -175,5 +177,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.088038, y: 1.022008}
   m_EdgeRadius: 0

@@ -58,4 +58,9 @@ public class GameMaster : MonoBehaviour
     {
         return world_lvl;
     }
+
+    public void spawnSwitch()
+    {
+        canSpawn = !canSpawn;
+    }
 }

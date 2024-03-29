@@ -6,6 +6,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public float currTime;
+    public bool pause = false;
 
     public TextMeshProUGUI timerText;
 
@@ -16,8 +17,11 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        currTime += Time.deltaTime; 
-        updateTimerText();
+        if (!pause)
+        {
+            currTime += Time.deltaTime;
+            updateTimerText();
+        }
     }
 
     void updateTimerText()
@@ -46,5 +50,10 @@ public class Timer : MonoBehaviour
         int min = getMin();
         int sec = Mathf.FloorToInt(currTime - min * 60);
         return sec;
+    }
+
+    public void pauseSwitch()
+    {
+        pause = !pause;
     }
 }

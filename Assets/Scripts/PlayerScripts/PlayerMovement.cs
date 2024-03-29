@@ -26,32 +26,30 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isDashing)
+        if (isDashing)
         {
             return;
         }
         float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY  = Input.GetAxisRaw("Vertical");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.Space) && canDash)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
-            if(Stamina >= DashCost)
+            if (Stamina >= DashCost)
             {
                 StartCoroutine(Dash());
                 Stamina -= DashCost;
-                if(Stamina < 0) Stamina = 0;
+                if (Stamina < 0) Stamina = 0;
                 StaminaBar.fillAmount = Stamina / MaxStamina;
-                if(recharge != null) StopCoroutine(recharge);
+                if (recharge != null) StopCoroutine(recharge);
                 recharge = StartCoroutine(RechargeStamina());
             }
         }
-        moveDir = new Vector2(moveX,moveY).normalized;
-
-
+        moveDir = new Vector2(moveX, moveY).normalized;
     }
     private void FixedUpdate()
     {
-        if(isDashing)
+        if (isDashing)
         {
             return;
         }
@@ -70,15 +68,21 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator RechargeStamina()
     {
         yield return new WaitForSeconds(1.5f);
-        while(Stamina < MaxStamina){
+        while (Stamina < MaxStamina)
+        {
             Stamina += ChargeRate / 10f;
-            if(Stamina > MaxStamina) Stamina = MaxStamina;
-            StaminaBar.fillAmount = Stamina / MaxStamina;
+            if (Stamina > MaxStamina) Stamina = MaxStamina;
+                StaminaBar.fillAmount = Stamina / MaxStamina;
             yield return new WaitForSeconds(.1f);
         }
     }
     public bool getDashState()
     {
         return isDashing;
+    }
+
+    public void setSpeed(float v)
+    {
+        moveSpeed = v;
     }
 }

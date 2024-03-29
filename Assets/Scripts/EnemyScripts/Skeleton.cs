@@ -11,6 +11,8 @@ public class Skeleton : RangeEnemy
 
     public GameObject projectile;
 
+    public Sprite atkSprite;
+
     void Start()
     {
         timer = 0f;
@@ -50,9 +52,13 @@ public class Skeleton : RangeEnemy
         GameObject proj_instance = Instantiate(projectile, transform.position, Quaternion.identity);
 
         //Set properties of the attack
+        Projectile projComp = proj_instance.GetComponent<Projectile>();
         proj_instance.tag = "Enemy_Atk";
-        proj_instance.GetComponent<Projectile>().setTarget("Player");
-        proj_instance.GetComponent<Projectile>().setPower(this.effPwr);
+        projComp.setTarget("Player");
+        projComp.setLifetime(10f);
+        projComp.setPower(this.effPwr);
+        projComp.setSprite(atkSprite);
+        projComp.setForce(5);
     }
 
     private IEnumerator atk_behavior()

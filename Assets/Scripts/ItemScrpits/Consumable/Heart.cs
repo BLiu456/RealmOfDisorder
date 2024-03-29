@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class Heart : ItemObject
 {
+    public GameObject heartUIPrefab;
     public override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Health healthComp = other.GetComponent<Health>();
-
-            if (healthComp != null)
+            Health hlth = other.GetComponent<Health>();
+            HealthUI hlthUI = other.GetComponent<HealthUI>();
+            if (hlth != null)
             {
-                int heal = healthComp.getMaxHp() / 2;
-                healthComp.healed(heal);
+                effect(hlth);
+                hlthUI.changeBar();
+                Destroy(gameObject);
             }
-
-            Destroy(gameObject);
         }
+    }
+    public void effect(Health playerHealth)
+    {
+        int healAmount = playerHealth.getMaxHp() / 2;
+        playerHealth.healed(healAmount);
     }
 }

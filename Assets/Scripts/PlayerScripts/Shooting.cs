@@ -16,14 +16,12 @@ public class Shooting : MonoBehaviour
     public string ownerTag = ""; //The entity who is doing the shooting (Player_Atk or Enemey_Atk)
     public string targetTag = ""; //The target the entity is trying to damge (Player or Enemy)
     public int rangePower = 1;
+    public Sprite projSprite;
 
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        proj.tag = ownerTag;
-        proj.GetComponent<Projectile>().setTarget(targetTag);
-        proj.GetComponent<Projectile>().setPower(rangePower);
     }
 
     void Update()
@@ -56,9 +54,13 @@ public class Shooting : MonoBehaviour
             GameObject proj_instance = Instantiate(proj, bulletTransform.position, Quaternion.identity);
 
             //Set properties of the attack
+            Projectile projComp = proj_instance.GetComponent<Projectile>();
             proj_instance.tag = ownerTag;
-            proj_instance.GetComponent<Projectile>().setTarget(targetTag);
-            proj_instance.GetComponent<Projectile>().setPower(rangePower);
+            projComp.setTarget(targetTag);
+            projComp.setLifetime(8f);
+            projComp.setPower(rangePower);
+            projComp.setSprite(projSprite);
+            projComp.setForce(10);
         }
     }
 
