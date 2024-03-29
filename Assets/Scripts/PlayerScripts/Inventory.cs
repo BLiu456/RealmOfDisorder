@@ -6,7 +6,6 @@ public class Inventory : MonoBehaviour
 {
     public GameObject[] slots; 
 
-   
     public bool AddItem(Equipment item)
     {
         for (int i = 0; i < slots.Length; i++)
