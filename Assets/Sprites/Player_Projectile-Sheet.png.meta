@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e56a55ce37129488ca07528619ce2056
+guid: 1e0baebc39e81447fa3f2456d1b6d950
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,127 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_0
+      name: Player_Projectile-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49, y: 0.49}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0849a19fce80042f182e061379cf2803
-      internalID: -1930005554
+      spriteID: 623e71eb2664949d0bfb47d928353075
+      internalID: 1416383038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_1
+      name: Player_Projectile-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49, y: 0.825}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 576c0a407d2184f52ad0071f82a042d0
-      internalID: -1152992908
+      spriteID: 84b722cdea6484eceb423902360d429e
+      internalID: 1056650579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_2
+      name: Player_Projectile-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49, y: 0.825}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b3fcf0424df64233b5de9d4fc3d4197
-      internalID: -1296386597
+      spriteID: 1efa014ee7dcd423489acd150ac86ec3
+      internalID: -1944950025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_3
+      name: Player_Projectile-Sheet_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49, y: 0.825}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5127f5f50dae24ce2a02b0a43eeb7b6e
-      internalID: 2127535808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d6f91e4c8f664c4f80877dd88856478
-      internalID: 1711667130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a2f446f04e044f8780c2ac5d5fd2cca
-      internalID: 566561658
+      spriteID: 88a26d059f5f840318130502586c117c
+      internalID: 425997737
       vertices: []
       indices: 
       edges: []
@@ -246,12 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wizard_L_R_Idle_Walk-Sheet_0: -1930005554
-      Wizard_L_R_Idle_Walk-Sheet_1: -1152992908
-      Wizard_L_R_Idle_Walk-Sheet_2: -1296386597
-      Wizard_L_R_Idle_Walk-Sheet_3: 2127535808
-      Wizard_L_R_Idle_Walk-Sheet_4: 1711667130
-      Wizard_L_R_Idle_Walk-Sheet_5: 566561658
+      Player_Projectile-Sheet_0: 1416383038
+      Player_Projectile-Sheet_1: 1056650579
+      Player_Projectile-Sheet_2: -1944950025
+      Player_Projectile-Sheet_3: 425997737
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

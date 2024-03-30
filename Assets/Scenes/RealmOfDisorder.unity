@@ -384,6 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262259764}
   - component: {fileID: 262259765}
+  - component: {fileID: 262259766}
   m_Layer: 0
   m_Name: RotatePoint
   m_TagString: RotatePoint
@@ -426,7 +427,28 @@ MonoBehaviour:
   ownerTag: Player_Atk
   targetTag: Enemy
   rangePower: 1
-  projSprite: {fileID: 21300000, guid: 17fa3b20886b372439b1a16da6024e10, type: 3}
+  projSprite: {fileID: 1752130601, guid: 1e0baebc39e81447fa3f2456d1b6d950, type: 3}
+--- !u!95 &262259766
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262259763}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a04cd5b2a1c664d2986d15f87e8c83c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &389492630
 GameObject:
   m_ObjectHideFlags: 0
@@ -8463,7 +8485,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.7111111, y: 0.7111111}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
