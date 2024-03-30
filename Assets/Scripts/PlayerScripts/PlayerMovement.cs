@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     public float moveSpeed;
     public Rigidbody2D rb;
     private Vector2 moveDir;

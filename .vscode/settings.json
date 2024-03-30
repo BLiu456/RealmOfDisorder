@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "RealmOfDisorder.sln"
+    "dotnet.defaultSolution": "RealmOfDisorder.sln",
+    "FSharp.suggestGitignore": false
 }
