@@ -30,6 +30,11 @@ public class Health : MonoBehaviour
         this.maxHP = maxHp;
     }
 
+    public void increaseMaxHp(int maxHp)
+    {
+        this.maxHP = maxHp;
+    }
+
     public void damaged(int power)
     {
         currentHP -= power;

@@ -23,7 +23,7 @@ public class PlayerLevel : MonoBehaviour
     {
         level += 1;
         lvlText.text = level.ToString();
-        player.scaleStats(level);
+        player.levelStats(level);
     }
 
     public int getLvl()

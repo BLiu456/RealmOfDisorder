@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,17 +13,26 @@ public class Player : MonoBehaviour
     public float atkCD; //Attack Cooldown
 
     [SerializeField]
+    private Health hpManager;
+
+    [SerializeField]
+    private HealthUI hpUI;
+
+    [SerializeField]
     private Shooting shoot;
 
     [SerializeField]
     private GameMaster gm;
 
+    [SerializeField]
+    private Inventory inv;
+
     void Start()
     {
         effectivePower = basePower;
         effectiveHp = baseHp;
-        GetComponent<Health>().setHealthValues(effectiveHp, effectiveHp);
-        this.GetComponent<HealthUI>().changeBar();
+        hpManager.setHealthValues(effectiveHp, effectiveHp);
+        hpUI.changeBar();
 
         shoot.setAtkCD(atkCD);
         shoot.updatePower(effectivePower);
@@ -35,14 +45,14 @@ public class Player : MonoBehaviour
             if (collision.tag == "Enemy")
             {
                 EnemyObject enemyComp = collision.GetComponent<EnemyObject>();
-                this.GetComponent<Health>().damaged(enemyComp.applyDamage());
-                this.GetComponent<HealthUI>().changeBar();
+                hpManager.damaged(enemyComp.applyDamage());
+                hpUI.changeBar();
             }
             else if (collision.tag == "Enemy_Atk")
             {
                 Projectile projComp = collision.GetComponent<Projectile>();
-                this.GetComponent<Health>().damaged(projComp.applyDamage());
-                this.GetComponent<HealthUI>().changeBar();
+                hpManager.damaged(projComp.applyDamage());
+                hpUI.changeBar();
             }
 
             if (!this.GetComponent<Health>().isAlive)
@@ -56,24 +66,45 @@ public class Player : MonoBehaviour
 
     public void calcEffHp()
     {
-        /*Will do some complicated formula later but for now
-         just make it equal to the base stat*/
-        effectiveHp = baseHp;
-        GetComponent<Health>().setHealthValues(effectiveHp, effectiveHp);
-        this.GetComponent<HealthUI>().changeBar();
+        Equipment hlthEquip = inv.getEquipById("armor");
+        float equipMod = 0;
+        if (hlthEquip != null)
+        {
+            equipMod = hlthEquip.getEffect();
+        }
+
+        effectiveHp = (int)Math.Ceiling((float)baseHp * (1f + equipMod));
+        hpManager.increaseMaxHp(effectiveHp);
+        hpUI.changeBar();
     }
 
     public void calcEffPower()
     {
-        effectivePower = basePower;
+        Equipment swordEquip = inv.getEquipById("sword");
+        float equipMod = 0;
+        if (swordEquip != null)
+        {
+            equipMod = swordEquip.getEffect();
+        }
+
+        effectivePower = (int)Math.Ceiling((float)basePower * (1f + equipMod));
         shoot.updatePower(effectivePower);
     }
 
-    public void scaleStats(int level)
+    public void levelStats(int level)
     {
         baseHp += 5 * level;
         basePower += 3 * level;
 
+        calcEffHp();
+        hpManager.healed(effectiveHp); //Full heal the player when leveling up
+        hpUI.changeBar();
+        calcEffPower();
+    }
+
+    //Mainly used when player obtains equipment
+    public void updateStats()
+    {
         calcEffHp();
         calcEffPower();
     }

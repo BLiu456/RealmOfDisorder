@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class Sword : Equipment
 {
-    public float buffAmount = 0f;
+    public float buffAmount = 0.1f;
     public float buffModifier = 0.1f;
+
+    void Awake()
+    {
+        id = "sword";
+        this.effect();
+    }
 
     public override void effect()
     {
         buffAmount = buffModifier * level;
     }
 
-    public float getBuff()
+    public override float getEffect()
     {
+        effect();
         return buffAmount;
     }
 
-/*    public override void OnTriggerEnter2D(Collider2D other)
+    public override Equipment clone()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            //Pick up into inventory logic goes here
-            Inventory inventory = other.GetComponent<Inventory>();
-            if (inventory != null && inventory.AddItem(this)) 
-            {
-                Destroy(gameObject); 
-            }
-
-        }
-    }*/
+        return (Sword)this.MemberwiseClone();
+    }
 }
