@@ -53,6 +53,12 @@ public class PlayerLevel : MonoBehaviour
         changeBar();
     }
 
+    public void addExpToLvl()
+    {
+        int amount = lvlRequire - exp;
+        addExp(amount);
+    }
+
     public void changeBar()
     {
         expBar.fillAmount = (float)exp / (float)lvlRequire;

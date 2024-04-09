@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3203454751782175543}
   m_Layer: 0
   m_Name: Heart Heal
-  m_TagString: Untagged
+  m_TagString: Consumable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,8 @@ MonoBehaviour:
   name: Heart Container
   desc: Heals player for 50% of their max hp
   sprite: {fileID: 21300000, guid: 6541a3021a95ea04d92f210d747193cf, type: 3}
+  uiPrefab: {fileID: 0}
+  heartUIPrefab: {fileID: 0}
 --- !u!61 &3203454751782175543
 BoxCollider2D:
   m_ObjectHideFlags: 0

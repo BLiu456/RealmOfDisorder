@@ -9,6 +9,8 @@ TagManager:
   - GameManager
   - Enemy_Atk
   - RotatePoint
+  - Equipment
+  - Consumable
   layers:
   - Default
   - TransparentFX
