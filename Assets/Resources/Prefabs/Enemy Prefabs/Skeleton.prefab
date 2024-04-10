@@ -142,7 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loot:
-  - {fileID: 3100206191265629490, guid: c32f7e17d1b053c4daa95c8f4a76f707, type: 3}
+  - {fileID: 1418711715180798379, guid: edec8221f6a0897489ac6a96a49836ee, type: 3}
+  - {fileID: 2255036220286335694, guid: 4ba49a8c5806fbf4eb34c9f8e1e4554a, type: 3}
   - {fileID: 229485485688884783, guid: b059edf72966e534994d0a7e7d2b643c, type: 3}
 --- !u!61 &7810815249581418231
 BoxCollider2D:

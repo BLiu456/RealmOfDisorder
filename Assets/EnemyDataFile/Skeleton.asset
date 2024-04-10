@@ -16,5 +16,5 @@ MonoBehaviour:
   power: 3
   speed: 2
   exp: 2
-  dropRate: 3
+  dropRate: 5
   cost: 6

@@ -84,4 +84,11 @@ public class PlayerMovement : MonoBehaviour
     {
         moveSpeed = v;
     }
+
+    public void setMaxStamina(float s)
+    {
+        MaxStamina = s;
+        Stamina = MaxStamina; //Refill stamina 
+        StaminaBar.fillAmount = Stamina / MaxStamina;
+    }
 }

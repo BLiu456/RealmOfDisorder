@@ -1,22 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [Header("Stats")]
     public int baseHp = 10;
-    public int effectiveHp = 10;
+    private int effectiveHp = 10;
     public int basePower = 5;
-    public int effectivePower = 5;
-    public float atkCD; //Attack Cooldown
+    private int effectivePower = 5;
+    public float baseSpd = 6f;
+    private float effectiveSpd = 6f;
+    public float baseStamina = 30f;
+    private float effectiveStamina = 30f;
+    public float baseAtkCD = 1f; //Attack Cooldown
+    private float effectiveAtkCD = 1f;
 
+    [Header("Managers")]
     [SerializeField]
     private Health hpManager;
 
     [SerializeField]
     private HealthUI hpUI;
+
+    [SerializeField]
+    private PlayerMovement move;
 
     [SerializeField]
     private Shooting shoot;
@@ -31,10 +41,15 @@ public class Player : MonoBehaviour
     {
         effectivePower = basePower;
         effectiveHp = baseHp;
+        effectiveSpd = baseSpd;
+        effectiveStamina = baseStamina;
+        effectiveAtkCD = baseAtkCD;
         hpManager.setHealthValues(effectiveHp, effectiveHp);
         hpUI.changeBar();
 
-        shoot.setAtkCD(atkCD);
+        move.setSpeed(effectiveSpd);
+        move.setMaxStamina(effectiveStamina);
+        shoot.setAtkCD(effectiveAtkCD);
         shoot.updatePower(effectivePower);
     }
 
@@ -58,7 +73,7 @@ public class Player : MonoBehaviour
             if (!this.GetComponent<Health>().isAlive)
             {
                 gm.GetComponent<GameOver>().gameOver();
-                this.GetComponent<PlayerMovement>().setSpeed(0);
+                move.setSpeed(0);
                 GameObject.FindGameObjectWithTag("RotatePoint").SetActive(false);
             }
         }
@@ -91,6 +106,45 @@ public class Player : MonoBehaviour
         shoot.updatePower(effectivePower);
     }
 
+    public void calcSpeed()
+    {
+        Equipment spdEquip = inv.getEquipById("boots");
+        float equipMod = 0;
+        if (spdEquip != null)
+        {
+            equipMod = spdEquip.getEffect();
+        }
+
+        effectiveSpd = baseSpd + equipMod;
+        move.setSpeed(effectiveSpd);
+    }
+
+    public void calcStamina()
+    {
+        Equipment stamEquip = inv.getEquipById("necklace");
+        float equipMod = 0;
+        if (stamEquip != null)
+        {
+            equipMod = stamEquip.getEffect();
+        }
+
+        effectiveStamina = baseStamina + equipMod;
+        move.setMaxStamina(effectiveStamina);
+    }
+
+    public void calcAtkCD()
+    {
+        Equipment hatEquip = inv.getEquipById("hat");
+        float equipMod = 0;
+        if (hatEquip != null)
+        {
+            equipMod = hatEquip.getEffect();
+        }
+
+        effectiveAtkCD = baseAtkCD * (1f - equipMod);
+        shoot.setAtkCD(effectiveAtkCD);
+    }
+
     public void levelStats(int level)
     {
         baseHp += 5 * level;
@@ -107,5 +161,8 @@ public class Player : MonoBehaviour
     {
         calcEffHp();
         calcEffPower();
+        calcSpeed();
+        calcStamina();
+        calcAtkCD();
     }
 }
