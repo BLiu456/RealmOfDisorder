@@ -50,10 +50,10 @@ public class Spawner : MonoBehaviour
                 numToSpawn += 1;
                 bank -= x.Value;
 
-                /*Add a 20% chance to stop spawning this enemy and move to the next one.
+                /*Add a 15% chance to stop spawning this enemy and move to the next one.
                  This should create some variance in the waves of enemies it spawns*/
                 int skip = Random.Range(1, 101);
-                if (skip <= 20)
+                if (skip <= 15)
                 {
                     break;
                 }

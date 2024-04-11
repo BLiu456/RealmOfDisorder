@@ -419,6 +419,8 @@ MonoBehaviour:
   bulletTransform: {fileID: 567977605}
   canFire: 1
   timeBetweenFiring: 1
+  bulletLife: 8
+  bulletSpd: 20
   ownerTag: Player_Atk
   targetTag: Enemy
   rangePower: 1

@@ -11,6 +11,8 @@ public class Shooting : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
+    public float bulletLife = 8f;
+    public float bulletSpd = 15f;
 
     //Data for the bullets
     public string ownerTag = ""; //The entity who is doing the shooting (Player_Atk or Enemey_Atk)
@@ -57,10 +59,10 @@ public class Shooting : MonoBehaviour
             Projectile projComp = proj_instance.GetComponent<Projectile>();
             proj_instance.tag = ownerTag;
             projComp.setTarget(targetTag);
-            projComp.setLifetime(8f);
+            projComp.setLifetime(bulletLife);
             projComp.setPower(rangePower);
             projComp.setSprite(projSprite);
-            projComp.setForce(10);
+            projComp.setForce(bulletSpd);
         }
     }
 
@@ -73,5 +75,15 @@ public class Shooting : MonoBehaviour
     public void setAtkCD(float x)
     {
         timeBetweenFiring = x;
+    }
+
+    public void setBulletLife(float x)
+    {
+        bulletLife = x;
+    }
+
+    public void setBulletSpd(float x)
+    {
+        bulletSpd = x;
     }
 }
