@@ -9498,7 +9498,7 @@ MonoBehaviour:
   worldTimer: 60
   rateTimer: 15
   spawnTime: 6
-  spawnCoef: 10
+  spawnCoef: 11
   world_lvl: 0
   spawnCredit: 10
   spawn: {fileID: 1778767395}

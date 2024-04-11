@@ -20,7 +20,6 @@ public class Skeleton : RangeEnemy
         canMove = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (canFire)

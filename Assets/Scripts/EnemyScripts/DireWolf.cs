@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DireWolf : MeleeEnemy
 {
+    public float spdScaler = 2f;
     public Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -44,6 +45,6 @@ public class DireWolf : MeleeEnemy
     public void scaleSpd()
     {
         float lvl = gm.GetComponent<GameMaster>().getLvl();
-        speed = speed + (int)(3f * lvl);
+        speed = speed + (int)(spdScaler * lvl);
     }
 }

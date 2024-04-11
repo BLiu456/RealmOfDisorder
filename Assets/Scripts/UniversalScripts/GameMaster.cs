@@ -14,7 +14,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField]
     private float spawnTime = 6.0f;
     [SerializeField]
-    private int spawnCoef = 6;
+    private int spawnCoef;
 
     [Header("Difficulty Modifers")]
     public float world_lvl = 0f;
