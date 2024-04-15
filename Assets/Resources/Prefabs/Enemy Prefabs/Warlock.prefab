@@ -105,7 +105,8 @@ MonoBehaviour:
   basePwr: 5
   effPwr: 5
   speed: 0
-  exp: 10
+  baseExp: 1
+  effExp: 0
   dropRate: 15
   cost: 77
   data: {fileID: 11400000, guid: fd7a7d7ae9305354dbd2b075ee91c8d3, type: 2}
@@ -147,7 +148,7 @@ MonoBehaviour:
   loot:
   - {fileID: 1418711715180798379, guid: edec8221f6a0897489ac6a96a49836ee, type: 3}
   - {fileID: 3100206191265629490, guid: c32f7e17d1b053c4daa95c8f4a76f707, type: 3}
-  - {fileID: 229485485688884783, guid: b059edf72966e534994d0a7e7d2b643c, type: 3}
+  - {fileID: 4783374670695728016, guid: e29c5f91708fb234c80c019a5bae772b, type: 3}
 --- !u!61 &4087294762151372031
 BoxCollider2D:
   m_ObjectHideFlags: 0

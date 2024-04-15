@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569f10c689b8a0c4db9794c2481db991, type: 3}
   m_Name: Goblin
   m_EditorClassIdentifier: 
-  health: 8
+  health: 10
   power: 4
-  speed: 6
-  exp: 1
+  speed: 5
+  exp: 2
   dropRate: 10
   cost: 2

@@ -14,13 +14,16 @@ public class GameMaster : MonoBehaviour
     [SerializeField]
     private float spawnTime = 6.0f;
     [SerializeField]
-    private int spawnCoef;
+    private float bossTime = 30.0f;
+    
 
     [Header("Difficulty Modifers")]
     public float world_lvl = 0f;
-    public int spawnCredit = 10;
+    public float spawnCredit = 10;
+    public float maxCredit = 350;
     public Spawner spawn;
-
+    [SerializeField]
+    private float spawnCoef;
     void Awake()
     {
         spawn = this.GetComponent<Spawner>();
@@ -31,26 +34,37 @@ public class GameMaster : MonoBehaviour
         activateSpawn(); //Spawn initial set of enemies
         InvokeRepeating("increaseDifficulty", worldTimer, worldTimer);
         InvokeRepeating("increaseSpawnRate", rateTimer, rateTimer); 
-        InvokeRepeating("activateSpawn", spawnTime, spawnTime); 
+        InvokeRepeating("activateSpawn", spawnTime, spawnTime);
+        InvokeRepeating("spawnBoss", bossTime, bossTime);
     }
 
     private void increaseDifficulty()
     {
-        world_lvl += 1f;
-        spawnCredit += spawnCoef * (1 + (int)world_lvl);
+        world_lvl += 1f; 
     }
 
     private void increaseSpawnRate()
     {
-        spawnCredit += spawnCoef;
+        if (spawnCredit <= maxCredit)
+        {
+            spawnCredit += spawnCoef * Mathf.Pow(2, 1.5f * world_lvl);
+        }   
     }
 
     private void activateSpawn()
     {
         if (canSpawn)
         {
-            spawn.addCredits(spawnCredit);
+            spawn.addCredits((int)spawnCredit);
             spawn.spawnEnemies();
+        }
+    }
+
+    private void spawnBoss()
+    {
+        if (canSpawn)
+        {
+            spawn.spawnBoss();
         }
     }
 

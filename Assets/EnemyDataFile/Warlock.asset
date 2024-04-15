@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569f10c689b8a0c4db9794c2481db991, type: 3}
   m_Name: Warlock
   m_EditorClassIdentifier: 
-  health: 12
+  health: 15
   power: 5
   speed: 0
-  exp: 10
+  exp: 20
   dropRate: 15
-  cost: 77
+  cost: 2116

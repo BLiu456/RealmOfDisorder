@@ -103,8 +103,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: e8f848f02803766409d41f33da7ce640, type: 3}
   uiPrefab: {fileID: 0}
   level: 1
-  buffAmount: 0
-  buffModifier: 0.1
+  buffAmount: 0.2
+  buffModifier: 0.2
 --- !u!61 &7612470935169125470
 BoxCollider2D:
   m_ObjectHideFlags: 0

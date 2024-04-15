@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
 {
     private Dictionary<int, GameObject> enemyDict;
     private Dictionary<int, int> costDict;
+    private GameObject[] bossList; 
 
     public Camera cam;
     private float height;
@@ -21,6 +22,7 @@ public class Spawner : MonoBehaviour
         width = cam.orthographicSize * cam.aspect + 1;
 
         GameObject[] enemies = Resources.LoadAll<GameObject>("Prefabs/Enemy Prefabs");
+        bossList = Resources.LoadAll<GameObject>("Prefabs/Boss Prefabs");
 
         enemyDict = new Dictionary<int, GameObject>(enemies.Length);
         costDict = new Dictionary<int, int>(enemies.Length);
@@ -50,10 +52,10 @@ public class Spawner : MonoBehaviour
                 numToSpawn += 1;
                 bank -= x.Value;
 
-                /*Add a 15% chance to stop spawning this enemy and move to the next one.
+                /*Add a 5% chance to stop spawning this enemy and move to the next one.
                  This should create some variance in the waves of enemies it spawns*/
                 int skip = Random.Range(1, 101);
-                if (skip <= 15)
+                if (skip <= 5)
                 {
                     break;
                 }
@@ -67,6 +69,14 @@ public class Spawner : MonoBehaviour
             }
             numToSpawn = 0;
         }
+    }
+
+    public void spawnBoss()
+    {
+        int bossIndex = Random.Range(0, bossList.Length);
+
+        Vector3 pos = getRandLoc();
+        Instantiate(bossList[bossIndex], pos, Quaternion.identity);
     }
 
     public void addCredits(int amount)

@@ -11,7 +11,8 @@ public class EnemyObject : MonoBehaviour
     public int basePwr = 1;
     public int effPwr;
     public int speed = 1;
-    public int exp = 1;
+    public int baseExp = 1;
+    public int effExp;
     public int dropRate = 1;
     public int cost = 1;
 
@@ -29,7 +30,7 @@ public class EnemyObject : MonoBehaviour
         baseHp = data.health;
         basePwr = data.power;
         speed = data.speed;
-        exp = data.exp;
+        baseExp = data.exp;
         dropRate = data.dropRate;
         cost = data.cost;
 
@@ -46,11 +47,12 @@ public class EnemyObject : MonoBehaviour
         return effPwr;
     }
 
-    public void scaleStats()
+    public virtual void scaleStats()
     {
         float lvl = gm.GetComponent<GameMaster>().getLvl();
-        effHp = (int)((float)baseHp * (1f + (0.5f * lvl)));
-        effPwr = (int)((float)basePwr * (1f + (0.5f * lvl)));
+        effHp = (int)((float)baseHp * Mathf.Pow(2f, lvl));
+        effPwr = (int)((float)basePwr * Mathf.Pow(2f, lvl));
+        effExp = (int)((float)baseExp * (1f + lvl));
 
         GetComponent<Health>().setHealthValues(effHp, effHp);
     }
@@ -71,7 +73,7 @@ public class EnemyObject : MonoBehaviour
 
     public virtual void onDeath()
     {
-        player.GetComponent<PlayerLevel>().addExp(exp);
+        player.GetComponent<PlayerLevel>().addExp(effExp);
 
         int dropped = Random.Range(1, 101); //Get range from 1 - 100
 

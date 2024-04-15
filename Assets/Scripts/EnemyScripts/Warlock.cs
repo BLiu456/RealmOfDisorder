@@ -60,7 +60,7 @@ public class Warlock : RangeEnemy
             Projectile projComp = proj_instance.GetComponent<Projectile>();
             proj_instance.tag = "Enemy_Atk";
             projComp.setTarget("Player");
-            projComp.setLifetime(fireTiming);
+            projComp.setLifetime(6);
             projComp.setPower(this.effPwr);
             projComp.setSprite(atkSprite);
             projComp.setForce(10);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DireWolf : MeleeEnemy
 {
-    public float spdScaler = 2f;
+    public float spdScaler = 1f;
     public Rigidbody2D rb;
 
     // Start is called before the first frame update

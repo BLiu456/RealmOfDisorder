@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerAnim : MonoBehaviour
 {
     private Animator anim;
+
+    [SerializeField]
+    private PlayerMovement move;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,7 @@ public class PlayerAnim : MonoBehaviour
         else{
             anim.SetBool("isWalking", false);
         }
-        if(Input.GetKey(KeyCode.Space)){
+        if(Input.GetKey(KeyCode.Space) && move.getDashState()){
             anim.SetTrigger("Dash");
         }
     }

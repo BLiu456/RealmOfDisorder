@@ -8,15 +8,16 @@ public class Player : MonoBehaviour
 {
     [Header("Stats")]
     public int baseHp = 10;
-    private int effectiveHp = 10;
+    public int effectiveHp = 10;
     public int basePower = 5;
-    private int effectivePower = 5;
+    public int effectivePower = 5;
     public float baseSpd = 6f;
-    private float effectiveSpd = 6f;
+    public float effectiveSpd = 6f;
     public float baseStamina = 30f;
-    private float effectiveStamina = 30f;
+    public float effectiveStamina = 30f;
     public float baseAtkCD = 1f; //Attack Cooldown
-    private float effectiveAtkCD = 1f;
+    public float effectiveAtkCD = 1f;
+    private bool invulOn = false;
 
     [Header("Managers")]
     [SerializeField]
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        invulOn = false;
         effectivePower = basePower;
         effectiveHp = baseHp;
         effectiveSpd = baseSpd;
@@ -55,7 +57,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!this.GetComponent<PlayerMovement>().getDashState() && this.GetComponent<Health>().isAlive)
+        if (!invulOn && !this.GetComponent<PlayerMovement>().getDashState() && this.GetComponent<Health>().isAlive)
         {
             if (collision.tag == "Enemy")
             {
@@ -76,6 +78,9 @@ public class Player : MonoBehaviour
                 move.setSpeed(0);
                 GameObject.FindGameObjectWithTag("RotatePoint").SetActive(false);
             }
+
+            invulOn = true;
+            StartCoroutine(activateIFrame());
         }
     }
 
@@ -164,5 +169,16 @@ public class Player : MonoBehaviour
         calcSpeed();
         calcStamina();
         calcAtkCD();
+    }
+
+    public float getEffSpd()
+    {
+        return effectiveSpd;
+    }
+
+    private IEnumerator activateIFrame()
+    {
+        yield return new WaitForSeconds(0.5f);
+        invulOn = false;
     }
 }

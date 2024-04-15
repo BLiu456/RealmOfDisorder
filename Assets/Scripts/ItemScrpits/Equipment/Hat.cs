@@ -14,7 +14,7 @@ public class Hat : Equipment
 
     public override void effect()
     {
-        buffAmount = 0.75f * (level / (level + 5));
+        buffAmount = 0.75f * (level / (level + 3));
     }
 
     public override float getEffect()
