@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Sword : Equipment
 {
-    public float buffAmount = 0.1f;
-    public float buffModifier = 0.1f;
+    public float buffAmount = 0.2f;
+    public float buffModifier = 0.2f;
 
     void Awake()
     {

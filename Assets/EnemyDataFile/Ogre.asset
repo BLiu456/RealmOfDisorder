@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   power: 10
-  speed: 5
+  speed: 4
   exp: 15
   dropRate: 15
   cost: 529
