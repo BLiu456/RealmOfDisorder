@@ -9,6 +9,7 @@ public class Hat : Equipment
     void Awake()
     {
         id = "hat";
+        popMsg = "ATK CD DOWN";
         this.effect();
     }
 

@@ -1823,7 +1823,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -8391,7 +8391,7 @@ MonoBehaviour:
   moveSpeed: 6
   rb: {fileID: 1336660855}
   activeMoveSpeed: 0
-  dashSpeed: 10
+  dashSpeed: 2
   dashDuration: 1
   dashCooldown: 1
   StaminaBar: {fileID: 753860964}
@@ -8427,6 +8427,7 @@ MonoBehaviour:
   shoot: {fileID: 262259765}
   gm: {fileID: 1778767396}
   inv: {fileID: 1336660857}
+  pop: {fileID: 1778253682}
 --- !u!4 &1336660853
 Transform:
   m_ObjectHideFlags: 0
@@ -8442,6 +8443,7 @@ Transform:
   m_Children:
   - {fileID: 262259764}
   - {fileID: 519420032}
+  - {fileID: 1778253681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1336660854
@@ -9321,6 +9323,51 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2302997450180935510, guid: 99804772a22534848b4d1e23687cd306, type: 3}
   m_PrefabInstance: {fileID: 1742647116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1778253680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1778253681}
+  - component: {fileID: 1778253682}
+  m_Layer: 0
+  m_Name: PopupSpace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1778253681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778253680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.003, y: 0.397, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1336660853}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1778253682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778253680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce5824f545a8764d9703cf97722ea25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popPrefab: {fileID: 8415223198839832400, guid: c9719fa5bb0cb3c48a81fd5426d2dd67, type: 3}
 --- !u!1 &1778767392
 GameObject:
   m_ObjectHideFlags: 0

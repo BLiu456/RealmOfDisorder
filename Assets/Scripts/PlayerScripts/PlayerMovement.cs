@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDir;
     public float activeMoveSpeed;
 
-    public float dashSpeed = 10f;
+    public float dashSpeed = 2f;
     public float dashDuration = 1f;
     public float dashCooldown = 1f;
     private bool isDashing;
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-        rb.velocity = new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed);
+        rb.velocity = new Vector2(moveDir.x * dashSpeed * moveSpeed, moveDir.y * dashSpeed * moveSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);

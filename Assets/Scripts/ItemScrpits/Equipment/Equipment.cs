@@ -19,6 +19,7 @@ public abstract class Equipment : ItemObject
             {
                 Equipment item = clone();
                 inventory.AddItem(item);
+                other.GetComponent<Player>().popupMsg(popMsg);
             }
             Destroy(gameObject);
         }

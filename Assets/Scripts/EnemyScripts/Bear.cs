@@ -66,7 +66,7 @@ public class Bear : MeleeEnemy
 
     private void roar()
     {
-        int numToSpawn = Random.Range(3, 6);
+        int numToSpawn = Random.Range(1, 3);
 
         for (int i = 0; i < numToSpawn; i++)
         {
@@ -81,7 +81,7 @@ public class Bear : MeleeEnemy
     public override void scaleStats()
     {
         float lvl = gm.GetComponent<GameMaster>().getLvl();
-        effHp = (int)((float)baseHp * Mathf.Pow(3f, lvl));
+        effHp = (int)((float)baseHp * Mathf.Pow(4f, lvl));
         effPwr = (int)((float)basePwr * Mathf.Pow(3f, lvl));
         effExp = (int)((float)baseExp * Mathf.Pow(1.5f, lvl));
 

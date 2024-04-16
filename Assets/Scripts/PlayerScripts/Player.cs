@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Inventory inv;
 
+    [SerializeField]
+    private PopupGenerator pop;
+
     void Start()
     {
         invulOn = false;
@@ -63,12 +66,14 @@ public class Player : MonoBehaviour
             {
                 EnemyObject enemyComp = collision.GetComponent<EnemyObject>();
                 hpManager.damaged(enemyComp.applyDamage());
+                StartCoroutine(activateIFrame());
                 hpUI.changeBar();
             }
             else if (collision.tag == "Enemy_Atk")
             {
                 Projectile projComp = collision.GetComponent<Projectile>();
                 hpManager.damaged(projComp.applyDamage());
+                StartCoroutine(activateIFrame());
                 hpUI.changeBar();
             }
 
@@ -78,9 +83,6 @@ public class Player : MonoBehaviour
                 move.setSpeed(0);
                 GameObject.FindGameObjectWithTag("RotatePoint").SetActive(false);
             }
-
-            invulOn = true;
-            StartCoroutine(activateIFrame());
         }
     }
 
@@ -178,7 +180,16 @@ public class Player : MonoBehaviour
 
     private IEnumerator activateIFrame()
     {
+        invulOn = true;
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.color = new Color(1, 0, 0);
         yield return new WaitForSeconds(0.5f);
+        renderer.color = new Color(1, 1, 1);
         invulOn = false;
+    }
+
+    public void popupMsg(string msg)
+    {
+        pop.generatePopup(msg);
     }
 }

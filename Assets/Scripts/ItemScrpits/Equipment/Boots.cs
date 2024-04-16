@@ -10,6 +10,7 @@ public class Boots : Equipment
     void Awake()
     {
         id = "boots";
+        popMsg = "SPD UP";
         this.effect();
     }
 

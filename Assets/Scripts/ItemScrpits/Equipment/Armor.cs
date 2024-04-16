@@ -9,6 +9,7 @@ public class Armor : Equipment
     void Awake()
     {
         id = "armor";
+        popMsg = "HLTH UP";
         this.effect();
     }
 

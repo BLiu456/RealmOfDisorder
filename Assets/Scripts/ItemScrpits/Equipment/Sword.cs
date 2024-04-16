@@ -10,6 +10,7 @@ public class Sword : Equipment
     void Awake()
     {
         id = "sword";
+        popMsg = "ATK UP";
         this.effect();
     }
 

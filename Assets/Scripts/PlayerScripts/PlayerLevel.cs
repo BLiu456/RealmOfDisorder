@@ -22,6 +22,7 @@ public class PlayerLevel : MonoBehaviour
     public void levelUp()
     {
         level += 1;
+        player.popupMsg("Level Up");
         lvlText.text = level.ToString();
         player.levelStats(level);
     }

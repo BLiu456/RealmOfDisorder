@@ -6,21 +6,13 @@ public class ExpScroll : ItemObject
 {
     public int exp = 25;
 
-    public override void OnTriggerEnter2D(Collider2D other)
+    public void Start()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            PlayerLevel lvl = other.GetComponent<PlayerLevel>();
-            if (lvl != null)
-            {
-                effect(lvl);
-                Destroy(gameObject);
-            }
-        }
+        popMsg = "EXP+";
     }
 
-    public void effect(PlayerLevel lvl)
+    public override void effect(GameObject lvl)
     {
-        lvl.addExp(exp);
+        lvl.GetComponent<PlayerLevel>().addExp(exp);
     }
 }

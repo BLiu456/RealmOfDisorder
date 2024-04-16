@@ -101,17 +101,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9c5c3886b1a4f44a1b8d70a52f5fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHp: 4
-  effHp: 4
+  baseHp: 5
+  effHp: 5
   basePwr: 5
   effPwr: 5
   speed: 10
-  exp: 3
-  dropRate: 10
-  cost: 12
+  baseExp: 5
+  effExp: 5
+  dropRate: 12
+  cost: 33
   data: {fileID: 11400000, guid: e87a390f68c4a104c99e7fb91c92d4fe, type: 2}
   player: {fileID: 0}
   gm: {fileID: 0}
+  spdScaler: 2
   rb: {fileID: 6875689307539255207}
 --- !u!114 &7920337116642445090
 MonoBehaviour:
@@ -125,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023c5fd10f89d964fb34ea22a10c3bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 4
-  maxHP: 4
+  currentHP: 5
+  maxHP: 5
   isAlive: 1
 --- !u!61 &8643624090113714476
 BoxCollider2D:
@@ -215,4 +217,5 @@ MonoBehaviour:
   loot:
   - {fileID: 5001902108353935628, guid: eedef2ff47f5cb04fa963478acec4e90, type: 3}
   - {fileID: 4651706782738188709, guid: 9241ba65576574444a542c3472e93775, type: 3}
+  - {fileID: 3100206191265629490, guid: c32f7e17d1b053c4daa95c8f4a76f707, type: 3}
   - {fileID: 229485485688884783, guid: b059edf72966e534994d0a7e7d2b643c, type: 3}

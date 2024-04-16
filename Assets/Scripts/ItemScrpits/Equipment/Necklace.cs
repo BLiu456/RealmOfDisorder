@@ -10,6 +10,7 @@ public class Necklace : Equipment
     void Awake()
     {
         id = "necklace";
+        popMsg = "STM UP";
         this.effect();
     }
 

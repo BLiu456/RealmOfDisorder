@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class MapClear : ItemObject
 {
-    public override void OnTriggerEnter2D(Collider2D other)
+    public void Start()
     {
-        if (other.gameObject.CompareTag("Player"))
+        popMsg = "SMITE";
+    }
+
+    public override void effect(GameObject obj)
+    {
+        GameObject[] gameObj = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject x in gameObj)
         {
-            GameObject[] gameObj = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (GameObject x in gameObj)
-            {
-                EnemyObject killSwitch = x.GetComponent<EnemyObject>();
-                killSwitch.onDeath();
-            }
+            EnemyObject killSwitch = x.GetComponent<EnemyObject>();
+            killSwitch.onDeath();
+        }
 
-            GameObject[] pObj = GameObject.FindGameObjectsWithTag("Enemy_Atk");
-            foreach (GameObject x in pObj)
-            {
-                Destroy(x);
-            }
-
-            Destroy(gameObject);
+        GameObject[] pObj = GameObject.FindGameObjectsWithTag("Enemy_Atk");
+        foreach (GameObject x in pObj)
+        {
+            Destroy(x);
         }
     }
 }

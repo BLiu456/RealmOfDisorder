@@ -50,7 +50,7 @@ public class EnemyObject : MonoBehaviour
     public virtual void scaleStats()
     {
         float lvl = gm.GetComponent<GameMaster>().getLvl();
-        effHp = (int)((float)baseHp * Mathf.Pow(2f, lvl));
+        effHp = (int)((float)baseHp * Mathf.Pow(2.5f, lvl));
         effPwr = (int)((float)basePwr * Mathf.Pow(2f, lvl));
         effExp = (int)((float)baseExp * (1f + lvl));
 
@@ -63,6 +63,7 @@ public class EnemyObject : MonoBehaviour
         {
             Projectile projComp = other.GetComponent<Projectile>();
             this.GetComponent<Health>().damaged(projComp.applyDamage());
+            StartCoroutine(damageFlash());
 
             if (this.GetComponent<Health>().isAlive == false)
             {
@@ -88,5 +89,13 @@ public class EnemyObject : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private IEnumerator damageFlash()
+    {
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.color = new Color(1, 0, 0);
+        yield return new WaitForSeconds(0.1f);
+        renderer.color = new Color(1, 1, 1);
     }
 }

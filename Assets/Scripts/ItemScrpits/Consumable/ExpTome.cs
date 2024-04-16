@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class ExpTome : ItemObject
 {
-    public override void OnTriggerEnter2D(Collider2D other)
+    public void Start()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            PlayerLevel lvl = other.GetComponent<PlayerLevel>();
-            if (lvl != null)
-            {
-                effect(lvl);
-                Destroy(gameObject);
-            }
-        }
+        popMsg = ""; //Display no text since it'll display the level up text
     }
 
-    public void effect(PlayerLevel lvl)
+    public override void effect(GameObject lvl)
     {
-        lvl.addExpToLvl();
+        lvl.GetComponent<PlayerLevel>().addExpToLvl();
     }
 }
