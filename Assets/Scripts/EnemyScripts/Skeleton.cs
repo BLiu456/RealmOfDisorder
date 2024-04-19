@@ -27,19 +27,15 @@ public class Skeleton : RangeEnemy
             canFire = false;
             StartCoroutine(atk_behavior());
         }
-        else
+        else if (canMove)
         {
+            base.movement();
             timer += Time.deltaTime;
             if (timer > fireTiming)
             {
                 canFire = true;
                 timer = 0;
             }
-        }
-
-        if (canMove)
-        {
-            base.movement();
         }
     }
 

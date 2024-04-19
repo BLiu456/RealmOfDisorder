@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     [Header("Stats")]
     public float force;
     public int power = 1;
+    public int pierce = 1;
 
     [Header("Properties")]
     public Vector3 dir;
@@ -54,7 +55,12 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag(targetTag))
         {
-            Destroy(gameObject);
+            pierce--;
+            if (pierce == 0)
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 
@@ -91,6 +97,11 @@ public class Projectile : MonoBehaviour
     public void setRot(Vector3 turn)
     {
         rot = turn;
+    }
+
+    public void setPierce(int x)
+    {
+        pierce = x;
     }
 
     public void setSprite(Sprite sp)

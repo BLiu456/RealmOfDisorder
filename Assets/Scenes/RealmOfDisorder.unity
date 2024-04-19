@@ -421,6 +421,9 @@ MonoBehaviour:
   timeBetweenFiring: 1
   bulletLife: 8
   bulletSpd: 20
+  bulletPierce: 1
+  numProj: 1
+  spread: 0
   ownerTag: Player_Atk
   targetTag: Enemy
   rangePower: 1
@@ -15597,7 +15600,9 @@ MonoBehaviour:
   level: 1
   lvlRequire: 50
   exp: 0
+  pierceMod: 2
   player: {fileID: 1336660852}
+  shoot: {fileID: 262259765}
   lvlText: {fileID: 1648467267}
   expBar: {fileID: 2066069860}
 --- !u!114 &1336660859

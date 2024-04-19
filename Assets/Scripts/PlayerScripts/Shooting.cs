@@ -13,6 +13,9 @@ public class Shooting : MonoBehaviour
     public float timeBetweenFiring;
     public float bulletLife = 8f;
     public float bulletSpd = 15f;
+    public int bulletPierce = 1;
+    public int numProj = 1;
+    public float spread = 0f;
 
     //Data for the bullets
     public string ownerTag = ""; //The entity who is doing the shooting (Player_Atk or Enemey_Atk)
@@ -49,11 +52,45 @@ public class Shooting : MonoBehaviour
         if (Input.GetMouseButton(0) && canFire)
         {
             canFire = false;
+            shoot();
+        }
+    }
 
-            //Aim attack towards mouse
-            proj.GetComponent<Projectile>().setDir(mousePos - bulletTransform.position);
-            proj.GetComponent<Projectile>().setRot(bulletTransform.position - mousePos);
-            GameObject proj_instance = Instantiate(proj, bulletTransform.position, Quaternion.identity);
+    private void shoot()
+    {
+        //Aim attack towards mouse
+        /*proj.GetComponent<Projectile>().setDir(mousePos - bulletTransform.position);
+        proj.GetComponent<Projectile>().setRot(bulletTransform.position - mousePos);
+        GameObject proj_instance = Instantiate(proj, bulletTransform.position, Quaternion.identity);*/
+
+        //Set properties of the attack
+        /*Projectile projComp = proj_instance.GetComponent<Projectile>();
+        proj_instance.tag = ownerTag;
+        projComp.setTarget(targetTag);
+        projComp.setLifetime(bulletLife);
+        projComp.setPower(rangePower);
+        projComp.setSprite(projSprite);
+        projComp.setForce(bulletSpd);*/
+
+        Vector3 mPos = mousePos;
+        Vector3 currPos = bulletTransform.position;
+        Vector3 dir = (mPos - currPos);
+        float radius = -1f * Vector3.Distance(mPos, currPos);
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        float angleStep = spread / (float)(numProj / 2);
+        float angleOffset = -1f * spread;
+
+        for (int i = 0; i < numProj; i++)
+        {
+            float xDir = currPos.x + (Mathf.Cos(((angle + angleOffset) * Mathf.PI) / 180) * radius);
+            float yDir = currPos.y + (Mathf.Sin(((angle + angleOffset) * Mathf.PI) / 180) * radius);
+
+            Vector3 projVector = new Vector3(xDir, yDir, 0);
+            //Vector3 projDir = mousePos - projVector; 
+
+            proj.GetComponent<Projectile>().setDir(mPos - projVector);
+            proj.GetComponent<Projectile>().setRot(projVector - mPos);
+            GameObject proj_instance = Instantiate(proj, transform.position, Quaternion.identity);
 
             //Set properties of the attack
             Projectile projComp = proj_instance.GetComponent<Projectile>();
@@ -63,6 +100,9 @@ public class Shooting : MonoBehaviour
             projComp.setPower(rangePower);
             projComp.setSprite(projSprite);
             projComp.setForce(bulletSpd);
+            projComp.setPierce(bulletPierce);
+
+            angleOffset += angleStep;
         }
     }
 
@@ -85,5 +125,20 @@ public class Shooting : MonoBehaviour
     public void setBulletSpd(float x)
     {
         bulletSpd = x;
+    }
+
+    public void setBulletPierce(int x)
+    {
+        bulletPierce = x;
+    }
+
+    public void setNumProj(int x)
+    {
+        numProj = x;
+    }
+
+    public void setSpread(float a)
+    {
+        spread = a;
     }
 }

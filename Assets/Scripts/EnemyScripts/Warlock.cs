@@ -11,6 +11,7 @@ public class Warlock : RangeEnemy
     public int maxProj = 12;
     private int numProj;
     public float radius = 1f;
+    private bool startTimer;
 
     public GameObject projectile;
     public Sprite atkSprite;
@@ -19,6 +20,7 @@ public class Warlock : RangeEnemy
     {
         timer = 0f;
         canFire = true;
+        startTimer = false;
     }
 
     void Update()
@@ -28,7 +30,7 @@ public class Warlock : RangeEnemy
             canFire = false;
             StartCoroutine(atk_behavior());
         }
-        else
+        else if (startTimer)
         {
             timer += Time.deltaTime;
             if (timer > fireTiming)
@@ -71,10 +73,12 @@ public class Warlock : RangeEnemy
 
     private IEnumerator atk_behavior()
     {
+        startTimer = false;
         numProj = Random.Range(minProj, maxProj+1); //Shoots a random amount of projectiles from 4 to 16
         shoot();
         yield return new WaitForSeconds(2);
         numProj = Random.Range(minProj, maxProj + 1); //Shoots a random amount of projectiles from 4 to 16
         shoot();
+        startTimer = true;
     }
 }

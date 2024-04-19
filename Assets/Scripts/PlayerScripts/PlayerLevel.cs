@@ -9,9 +9,13 @@ public class PlayerLevel : MonoBehaviour
     public int level = 1;
     public int lvlRequire = 50;
     public int exp = 0;
+    public int pierceMod = 2;
 
     [SerializeField]
     private Player player;
+
+    [SerializeField]
+    private Shooting shoot;
 
     [Header("UI")]
     [SerializeField]
@@ -25,6 +29,24 @@ public class PlayerLevel : MonoBehaviour
         player.popupMsg("Level Up");
         lvlText.text = level.ToString();
         player.levelStats(level);
+
+        switch (level)
+        {
+            case 5:
+                shoot.setNumProj(3);
+                shoot.setSpread(30f);
+                break;
+            case 20:
+                shoot.setNumProj(5);
+                shoot.setSpread(45f);
+                break;
+            default:
+                if (level % 25 == 0)
+                {
+                    shoot.setBulletPierce(pierceMod++);
+                }
+                break;
+        }
     }
 
     public int getLvl()
