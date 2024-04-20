@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd9f00626319cd4aaa990f847f0f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effPwr: 3
+  baseHp: 10
   effHp: 10
   basePwr: 4
   effPwr: 4
