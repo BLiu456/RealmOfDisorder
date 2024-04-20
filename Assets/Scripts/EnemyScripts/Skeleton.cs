@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Skeleton : RangeEnemy
 {
+    Animator myAnimator;
     private float timer;
     private bool canFire;
     private bool canMove;
@@ -15,6 +16,7 @@ public class Skeleton : RangeEnemy
 
     void Start()
     {
+        myAnimator = GetComponent<Animator>();
         timer = 0f;
         canFire = true;
         canMove = true;
@@ -59,6 +61,7 @@ public class Skeleton : RangeEnemy
     private IEnumerator atk_behavior()
     {
         canMove = false;
+        myAnimator.SetTrigger("Shoot");
         yield return new WaitForSeconds(1);
         shoot();
         yield return new WaitForSeconds(1);
