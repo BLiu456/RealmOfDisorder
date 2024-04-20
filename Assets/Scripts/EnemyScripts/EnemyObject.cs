@@ -22,6 +22,8 @@ public class EnemyObject : MonoBehaviour
 
     public GameObject gm;
 
+    public AudioSource audioSource;
+
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,6 +35,7 @@ public class EnemyObject : MonoBehaviour
         baseExp = data.exp;
         dropRate = data.dropRate;
         cost = data.cost;
+
 
         scaleStats();
     }
@@ -64,6 +67,7 @@ public class EnemyObject : MonoBehaviour
             Projectile projComp = other.GetComponent<Projectile>();
             this.GetComponent<Health>().damaged(projComp.applyDamage());
             StartCoroutine(damageFlash());
+            audioSource.Play();
 
             if (this.GetComponent<Health>().isAlive == false)
             {

@@ -41,6 +41,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private PopupGenerator pop;
 
+    [SerializeField]
+    private AudioSource audioSource;
+
     void Start()
     {
         invulOn = false;
@@ -56,6 +59,8 @@ public class Player : MonoBehaviour
         move.setMaxStamina(effectiveStamina);
         shoot.setAtkCD(effectiveAtkCD);
         shoot.updatePower(effectivePower);
+
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,6 +69,7 @@ public class Player : MonoBehaviour
         {
             if (collision.tag == "Enemy")
             {
+                audioSource.Play();
                 EnemyObject enemyComp = collision.GetComponent<EnemyObject>();
                 hpManager.damaged(enemyComp.applyDamage());
                 StartCoroutine(activateIFrame());
@@ -71,11 +77,13 @@ public class Player : MonoBehaviour
             }
             else if (collision.tag == "Enemy_Atk")
             {
+                audioSource.Play();
                 Projectile projComp = collision.GetComponent<Projectile>();
                 hpManager.damaged(projComp.applyDamage());
                 StartCoroutine(activateIFrame());
                 hpUI.changeBar();
             }
+
 
             if (!this.GetComponent<Health>().isAlive)
             {

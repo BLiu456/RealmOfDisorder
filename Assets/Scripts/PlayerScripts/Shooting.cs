@@ -16,6 +16,7 @@ public class Shooting : MonoBehaviour
     public int bulletPierce = 1;
     public int numProj = 1;
     public float spread = 0f;
+    private AudioSource audioSource;
 
     //Data for the bullets
     public string ownerTag = ""; //The entity who is doing the shooting (Player_Atk or Enemey_Atk)
@@ -27,6 +28,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -53,6 +55,7 @@ public class Shooting : MonoBehaviour
         {
             canFire = false;
             shoot();
+            audioSource.Play();
         }
     }
 
@@ -71,7 +74,6 @@ public class Shooting : MonoBehaviour
         projComp.setPower(rangePower);
         projComp.setSprite(projSprite);
         projComp.setForce(bulletSpd);*/
-
         Vector3 mPos = mousePos;
         Vector3 currPos = bulletTransform.position;
         Vector3 dir = (mPos - currPos);

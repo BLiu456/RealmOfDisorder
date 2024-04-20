@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6661391827778492860}
   - component: {fileID: 3430530860470167982}
   - component: {fileID: 4018093778537686297}
+  - component: {fileID: -1311758525838642223}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -100,17 +101,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd9f00626319cd4aaa990f847f0f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHp: 5
-  effHp: 5
-  basePwr: 3
   effPwr: 3
+  effHp: 10
+  basePwr: 4
+  effPwr: 4
   speed: 5
-  exp: 1
-  dropRate: 3
+  baseExp: 2
+  effExp: 2
+  dropRate: 10
   cost: 2
   data: {fileID: 11400000, guid: 3dd357e719f39484588e3e2fbfb24ba1, type: 2}
   player: {fileID: 0}
   gm: {fileID: 0}
+  audioSource: {fileID: -1311758525838642223}
 --- !u!114 &6661391827778492860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023c5fd10f89d964fb34ea22a10c3bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 5
-  maxHP: 5
+  currentHP: 10
+  maxHP: 10
   isAlive: 1
 --- !u!61 &3430530860470167982
 BoxCollider2D:
@@ -187,3 +190,99 @@ MonoBehaviour:
   - {fileID: 3954805858781549674, guid: 7146ac9c2b411e54e97cd367663c5884, type: 3}
   - {fileID: 229485485688884783, guid: b059edf72966e534994d0a7e7d2b643c, type: 3}
   - {fileID: 4651706782738188709, guid: 9241ba65576574444a542c3472e93775, type: 3}
+--- !u!82 &-1311758525838642223
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957888923185821255}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a3741ff1a82c50845b9f1caa8a81c9e2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

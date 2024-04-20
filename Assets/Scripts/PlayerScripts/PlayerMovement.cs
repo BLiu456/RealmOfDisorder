@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public float DashCost;
     public float ChargeRate;
     private Coroutine recharge;
+    public AudioSource audioDash;
+
 
     // Update is called once per frame
     void Update()
@@ -36,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Stamina >= DashCost)
             {
+                audioDash.Play();
                 StartCoroutine(Dash());
                 Stamina -= DashCost;
                 if (Stamina < 0) Stamina = 0;
