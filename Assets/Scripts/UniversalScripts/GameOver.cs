@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
     public void gameOver()
     {
         this.GetComponent<Timer>().pauseSwitch();
-        this.GetComponent<GameMaster>().spawnSwitch();
+        this.GetComponent<GameMaster>().spawnOff();
 
         GameObject[] gameObj = GameObject.FindGameObjectsWithTag("Enemy");
 

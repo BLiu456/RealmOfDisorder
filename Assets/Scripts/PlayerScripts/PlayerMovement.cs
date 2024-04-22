@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,14 +18,18 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
 
     public Image StaminaBar;
+    public TextMeshProUGUI StaminaTxt;
     public float Stamina, MaxStamina;
     public float DashCost;
     public float ChargeRate;
     private Coroutine recharge;
     public AudioSource audioDash;
 
+    void Start()
+    {
+        StaminaTxt.text = string.Format("{0}/{1}", Stamina, MaxStamina);
+    }
 
-    // Update is called once per frame
     void Update()
     {
         if (isDashing)
@@ -42,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Dash());
                 Stamina -= DashCost;
                 if (Stamina < 0) Stamina = 0;
+                StaminaTxt.text = string.Format("{0:0}/{1}", Stamina, MaxStamina);
                 StaminaBar.fillAmount = Stamina / MaxStamina;
                 if (recharge != null) StopCoroutine(recharge);
                 recharge = StartCoroutine(RechargeStamina());
@@ -74,10 +80,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Stamina += ChargeRate / 10f;
             if (Stamina > MaxStamina) Stamina = MaxStamina;
-                StaminaBar.fillAmount = Stamina / MaxStamina;
+            StaminaTxt.text = string.Format("{0:0}/{1}", Stamina, MaxStamina);
+            StaminaBar.fillAmount = Stamina / MaxStamina;
             yield return new WaitForSeconds(.1f);
         }
     }
+
     public bool getDashState()
     {
         return isDashing;
@@ -92,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MaxStamina = s;
         Stamina = MaxStamina; //Refill stamina 
+        StaminaTxt.text = string.Format("{0:0}/{1}", Stamina, MaxStamina);
         StaminaBar.fillAmount = Stamina / MaxStamina;
     }
 }

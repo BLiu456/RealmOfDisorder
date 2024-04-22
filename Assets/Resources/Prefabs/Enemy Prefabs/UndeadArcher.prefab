@@ -112,6 +112,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 66b2be48343a9c64bb99cf058c017550, type: 2}
   player: {fileID: 0}
   gm: {fileID: 0}
+  audioSource: {fileID: 0}
   fireTiming: 9
   projectile: {fileID: 3026378165288658046, guid: 54f4742b9fb99214699b1c1b12e6ee7d, type: 3}
   atkSprite: {fileID: 21300000, guid: 5ffc3927a8c66514f85f09e159868fa2, type: 3}
@@ -145,7 +146,7 @@ MonoBehaviour:
   loot:
   - {fileID: 2255036220286335694, guid: 4ba49a8c5806fbf4eb34c9f8e1e4554a, type: 3}
   - {fileID: 1418711715180798379, guid: edec8221f6a0897489ac6a96a49836ee, type: 3}
-  - {fileID: 4650010613260641142, guid: 622046db6384f2846bc9b3df4299e091, type: 3}
+  - {fileID: 4651706782738188709, guid: 9241ba65576574444a542c3472e93775, type: 3}
 --- !u!61 &8827059084322788845
 BoxCollider2D:
   m_ObjectHideFlags: 0

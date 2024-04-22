@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class GameMaster : MonoBehaviour
@@ -24,6 +26,11 @@ public class GameMaster : MonoBehaviour
     public Spawner spawn;
     [SerializeField]
     private float spawnCoef;
+
+    [Header("UI")]
+    public TextMeshProUGUI worldMsg;
+    public string[] msgs;
+
     void Awake()
     {
         spawn = this.GetComponent<Spawner>();
@@ -40,7 +47,8 @@ public class GameMaster : MonoBehaviour
 
     private void increaseDifficulty()
     {
-        world_lvl += 1f; 
+        world_lvl += 1f;
+        StartCoroutine(display());
     }
 
     private void increaseSpawnRate()
@@ -73,8 +81,19 @@ public class GameMaster : MonoBehaviour
         return world_lvl;
     }
 
-    public void spawnSwitch()
+    public void spawnOff()
     {
-        canSpawn = !canSpawn;
+        canSpawn = false;
+    }
+
+    private IEnumerator display()
+    {
+        if (msgs.Length != 0)
+        {
+            worldMsg.text = msgs[Random.Range(0, msgs.Length)];
+        };
+        worldMsg.enabled = true;
+        yield return new WaitForSeconds(3);
+        worldMsg.enabled = false;
     }
 }

@@ -112,7 +112,8 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 9ef83d5ab5bff584697d5bcd6413598b, type: 2}
   player: {fileID: 0}
   gm: {fileID: 0}
-  fireTiming: 6
+  audioSource: {fileID: 0}
+  fireTiming: 5
   orbLife: 10
   projectile: {fileID: 3026378165288658046, guid: 54f4742b9fb99214699b1c1b12e6ee7d, type: 3}
   orb: {fileID: 6646449224569765634, guid: 1f009bc752ab05048bc1e3de69ded59e, type: 3}

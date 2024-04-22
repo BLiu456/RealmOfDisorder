@@ -8,6 +8,7 @@ public abstract class Equipment : ItemObject
 {
     protected string id; 
     public float level = 1f;
+    public Sprite uiSprite;
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
@@ -33,6 +34,16 @@ public abstract class Equipment : ItemObject
     public string getId()
     {
         return id;
+    }
+
+    public Sprite getUISprite()
+    {
+        return uiSprite;
+    }
+
+    public float getLevel()
+    {
+        return level;
     }
 
     public abstract float getEffect();

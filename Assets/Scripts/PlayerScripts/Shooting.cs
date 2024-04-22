@@ -61,19 +61,6 @@ public class Shooting : MonoBehaviour
 
     private void shoot()
     {
-        //Aim attack towards mouse
-        /*proj.GetComponent<Projectile>().setDir(mousePos - bulletTransform.position);
-        proj.GetComponent<Projectile>().setRot(bulletTransform.position - mousePos);
-        GameObject proj_instance = Instantiate(proj, bulletTransform.position, Quaternion.identity);*/
-
-        //Set properties of the attack
-        /*Projectile projComp = proj_instance.GetComponent<Projectile>();
-        proj_instance.tag = ownerTag;
-        projComp.setTarget(targetTag);
-        projComp.setLifetime(bulletLife);
-        projComp.setPower(rangePower);
-        projComp.setSprite(projSprite);
-        projComp.setForce(bulletSpd);*/
         Vector3 mPos = mousePos;
         Vector3 currPos = bulletTransform.position;
         Vector3 dir = (mPos - currPos);

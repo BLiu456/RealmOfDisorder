@@ -36,12 +36,12 @@ public class PlayerLevel : MonoBehaviour
                 shoot.setNumProj(3);
                 shoot.setSpread(30f);
                 break;
-            case 20:
+            case 25:
                 shoot.setNumProj(5);
                 shoot.setSpread(45f);
                 break;
             default:
-                if (level % 25 == 0)
+                if (level % 50 == 0)
                 {
                     shoot.setBulletPierce(pierceMod++);
                 }

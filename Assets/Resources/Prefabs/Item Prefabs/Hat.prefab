@@ -100,9 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wizard's Hat
   desc: Reduces attack cooldown
+  popMsg: 
   sprite: {fileID: 21300000, guid: 372f14eb43c23ce43b92cc178045682c, type: 3}
-  uiPrefab: {fileID: 0}
   level: 1
+  uiSprite: {fileID: 21300000, guid: f87cc81ff49eba0418927319bb713330, type: 3}
   buffAmount: 1
 --- !u!61 &4149342309141135045
 BoxCollider2D:

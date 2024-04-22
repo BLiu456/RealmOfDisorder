@@ -67,7 +67,9 @@ public class EnemyObject : MonoBehaviour
             Projectile projComp = other.GetComponent<Projectile>();
             this.GetComponent<Health>().damaged(projComp.applyDamage());
             StartCoroutine(damageFlash());
-            audioSource.Play();
+
+            if (audioSource != null)
+                audioSource.Play();
 
             if (this.GetComponent<Health>().isAlive == false)
             {

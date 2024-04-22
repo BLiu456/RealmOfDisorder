@@ -5,11 +5,13 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public int maxSize = 5;
-    public int equipExp = 10;
+    public int equipExp = 50;
     public Dictionary<string, Equipment> slots;
 
     public Player player;
     public PlayerLevel playerExp;
+
+    public InventoryUI ui;
 
     void Awake()
     {
@@ -21,6 +23,7 @@ public class Inventory : MonoBehaviour
         string key = item.getId();
         if (slots.Count < maxSize && slots.TryAdd(key, item))
         {
+            ui.addToSlot(key, slots[key].getLevel(), slots[key].getUISprite());
             player.updateStats();
         }
         else
@@ -28,6 +31,7 @@ public class Inventory : MonoBehaviour
             if (slots.ContainsKey(key))
             {
                 slots[key].increaseLevel();
+                ui.updateLevelTxt(key, slots[key].getLevel());
                 player.updateStats();
             }
             else

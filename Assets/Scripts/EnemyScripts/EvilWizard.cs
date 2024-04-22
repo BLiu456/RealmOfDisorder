@@ -29,7 +29,6 @@ public class EvilWizard : RangeEnemy
         atkState = false;
     }
 
-    
     void Update()
     {
         if (canFire)
@@ -85,13 +84,13 @@ public class EvilWizard : RangeEnemy
         orbComp.setTarget("Player");
         orbComp.setLifetime(orbLife);
         orbComp.setSpeed(player.GetComponent<Player>().getEffSpd());
-        orbComp.setPower(effPwr);
+        orbComp.setPower((3 * effPwr) / 4); //Orb has 75% of evil wizards atk
     }
 
     public override void scaleStats()
     {
         float lvl = gm.GetComponent<GameMaster>().getLvl();
-        effHp = (int)((float)baseHp * Mathf.Pow(3.5f, lvl));
+        effHp = (int)((float)baseHp * Mathf.Pow(4f, lvl));
         effPwr = (int)((float)basePwr * Mathf.Pow(3f, lvl));
         effExp = (int)((float)baseExp * Mathf.Pow(1.5f, lvl));
 

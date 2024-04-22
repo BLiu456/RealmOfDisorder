@@ -8,7 +8,6 @@ public abstract class ItemObject : MonoBehaviour
     public string desc;
     public string popMsg;
     public Sprite sprite;
-    public GameObject uiPrefab;
 
     public virtual void OnTriggerEnter2D(Collider2D other) 
     {

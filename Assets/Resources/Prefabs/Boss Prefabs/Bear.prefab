@@ -113,7 +113,8 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 53aca33130a811b4eb7ed13909846e8b, type: 2}
   player: {fileID: 0}
   gm: {fileID: 0}
-  atkTiming: 6
+  audioSource: {fileID: 0}
+  atkTiming: 4
   atkDuration: 1.3
   atkSpd: 8
   spawnObj: {fileID: 7027496096955572336, guid: 3eb53c35cff740749964aa0081a49f89, type: 3}

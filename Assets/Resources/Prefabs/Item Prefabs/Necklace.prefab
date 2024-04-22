@@ -100,9 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Necklace of Vitality
   desc: Increases stamina by 10
+  popMsg: 
   sprite: {fileID: 21300000, guid: b08cc7c2d1628c546a03ff947b7c3fe3, type: 3}
-  uiPrefab: {fileID: 0}
   level: 1
+  uiSprite: {fileID: 21300000, guid: bf72ffdb33ed2ef408cac465edd4f90c, type: 3}
   buffAmount: 10
   buffMod: 10
 --- !u!61 &1544615671699798469

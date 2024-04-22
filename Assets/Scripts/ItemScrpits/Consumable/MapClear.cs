@@ -11,6 +11,7 @@ public class MapClear : ItemObject
 
     public override void effect(GameObject obj)
     {
+        //Destroy all enemies
         GameObject[] gameObj = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject x in gameObj)
         {
@@ -18,10 +19,11 @@ public class MapClear : ItemObject
             killSwitch.onDeath();
         }
 
+      /*//Destroy all projectiles   
         GameObject[] pObj = GameObject.FindGameObjectsWithTag("Enemy_Atk");
         foreach (GameObject x in pObj)
         {
             Destroy(x);
-        }
+        }*/
     }
 }
