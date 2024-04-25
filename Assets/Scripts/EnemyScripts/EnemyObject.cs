@@ -81,6 +81,7 @@ public class EnemyObject : MonoBehaviour
     public virtual void onDeath()
     {
         player.GetComponent<PlayerLevel>().addExp(effExp);
+        gm.GetComponent<KillCounter>().increment();
 
         int dropped = Random.Range(1, 101); //Get range from 1 - 100
 

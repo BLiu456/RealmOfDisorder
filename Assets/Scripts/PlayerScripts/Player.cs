@@ -63,9 +63,32 @@ public class Player : MonoBehaviour
        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //For single instance projectile attacks
     {
-        if (!invulOn && !this.GetComponent<PlayerMovement>().getDashState() && this.GetComponent<Health>().isAlive)
+        if (!invulOn && !this.GetComponent<PlayerMovement>().getDashState())
+        {
+            if (collision.tag == "Enemy_Atk")
+            {
+                audioSource.Play();
+                Debug.Log("hit");
+                Projectile projComp = collision.GetComponent<Projectile>();
+                hpManager.damaged(projComp.applyDamage());
+                StartCoroutine(activateIFrame());
+                hpUI.changeBar();
+            }
+
+            if (!this.GetComponent<Health>().isAlive)
+            {
+                gm.GetComponent<GameOver>().gameOver();
+                move.setSpeed(0);
+                GameObject.FindGameObjectWithTag("RotatePoint").SetActive(false);
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) //For continuous enemy attacks
+    {
+        if (!invulOn && !this.GetComponent<PlayerMovement>().getDashState())
         {
             if (collision.tag == "Enemy")
             {
@@ -75,15 +98,15 @@ public class Player : MonoBehaviour
                 StartCoroutine(activateIFrame());
                 hpUI.changeBar();
             }
-            else if (collision.tag == "Enemy_Atk")
+            if (collision.tag == "Enemy_Atk")
             {
                 audioSource.Play();
+                Debug.Log("hit");
                 Projectile projComp = collision.GetComponent<Projectile>();
                 hpManager.damaged(projComp.applyDamage());
                 StartCoroutine(activateIFrame());
                 hpUI.changeBar();
             }
-
 
             if (!this.GetComponent<Health>().isAlive)
             {
@@ -191,7 +214,7 @@ public class Player : MonoBehaviour
         invulOn = true;
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.color = new Color(1, 0, 0);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         renderer.color = new Color(1, 1, 1);
         invulOn = false;
     }
