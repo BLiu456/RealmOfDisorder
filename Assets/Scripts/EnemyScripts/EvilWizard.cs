@@ -8,6 +8,7 @@ public class EvilWizard : RangeEnemy
     private float timer;
     private bool canFire;
     public float fireTiming;
+    public int numProj = 3;
     public float orbLife = 5f;
 
     public GameObject projectile;
@@ -73,7 +74,7 @@ public class EvilWizard : RangeEnemy
         projComp.setLifetime(3f);
         projComp.setPower(this.effPwr / 2);
         projComp.setSprite(atkSprite);
-        projComp.setForce(40);
+        projComp.setForce(50);
     }
 
     public void summonOrb()
@@ -93,6 +94,7 @@ public class EvilWizard : RangeEnemy
         effHp = (int)((float)baseHp * Mathf.Pow(4f, lvl));
         effPwr = (int)((float)basePwr * Mathf.Pow(3f, lvl));
         effExp = (int)((float)baseExp * Mathf.Pow(1.5f, lvl));
+        numProj += (int)lvl - 2;
 
         GetComponent<Health>().setHealthValues(effHp, effHp);
     }
@@ -104,12 +106,12 @@ public class EvilWizard : RangeEnemy
         yield return new WaitForSeconds(1.5f);
         if (atkOp == 0)
         {   
-            shoot();
-            yield return new WaitForSeconds(0.5f);
-            shoot();
-            yield return new WaitForSeconds(0.5f);
-            shoot();
-            yield return new WaitForSeconds(2f);
+            for (int i = 0; i < numProj; i++)
+            {
+                shoot();
+                yield return new WaitForSeconds(0.5f);
+            }
+            yield return new WaitForSeconds(1.5f);
         }
         else
         {

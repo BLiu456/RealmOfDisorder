@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e56a55ce37129488ca07528619ce2056
+guid: 599f8f971fe864c059427aff7656c37a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,24 +106,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_0
+      name: Ogre_Walk-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0849a19fce80042f182e061379cf2803
-      internalID: -1930005554
+      spriteID: 91534499c937341a1a68f2cbc299531e
+      internalID: 781741944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_1
+      name: Ogre_Walk-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,92 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 576c0a407d2184f52ad0071f82a042d0
-      internalID: -1152992908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b3fcf0424df64233b5de9d4fc3d4197
-      internalID: -1296386597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5127f5f50dae24ce2a02b0a43eeb7b6e
-      internalID: 2127535808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d6f91e4c8f664c4f80877dd88856478
-      internalID: 1711667130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wizard_L_R_Idle_Walk-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a2f446f04e044f8780c2ac5d5fd2cca
-      internalID: 566561658
+      spriteID: f5eb8d75c0eea4e58b6e82f792196ec0
+      internalID: 1409430854
       vertices: []
       indices: 
       edges: []
@@ -259,12 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wizard_L_R_Idle_Walk-Sheet_0: -1930005554
-      Wizard_L_R_Idle_Walk-Sheet_1: -1152992908
-      Wizard_L_R_Idle_Walk-Sheet_2: -1296386597
-      Wizard_L_R_Idle_Walk-Sheet_3: 2127535808
-      Wizard_L_R_Idle_Walk-Sheet_4: 1711667130
-      Wizard_L_R_Idle_Walk-Sheet_5: 566561658
+      Ogre_Walk-Sheet_0: 781741944
+      Ogre_Walk-Sheet_1: 1409430854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

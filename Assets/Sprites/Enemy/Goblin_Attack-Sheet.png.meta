@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ecf43cc41e0a242699de4e6f2dd54b95
+guid: 5d1128a37a43144bfa222600b3d46050
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 35
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton_Attack 1_0
+      name: Goblin_Attack-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98839a54e49b64c2dbf3d72850a639b8
-      internalID: -1486353953
+      spriteID: b789cbeb6e01e4b9c8996ab78f665680
+      internalID: -1920768115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Attack 1_1
+      name: Goblin_Attack-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f21adca5efb8a41419b929948f44d21b
-      internalID: -826355024
+      spriteID: b364edaa2eb7a44009c37fc401483ad9
+      internalID: 353391173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Attack 1_2
+      name: Goblin_Attack-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2504c72eff5a4f97a24bc79c08f4019
-      internalID: -1580638736
+      spriteID: be569134fc5c249779fa40d823279efa
+      internalID: -1336431367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Attack 1_3
+      name: Goblin_Attack-Sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7e40f540bac341dc803ff2195e47dda
-      internalID: 1488416438
+      spriteID: ee88fb8032cae4fcd9e0afff5afdeef4
+      internalID: 1076472857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Attack 1_4
+      name: Goblin_Attack-Sheet_4
       rect:
         serializedVersion: 2
         x: 256
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e39161e0463847fd8f3f7b0333d9b4f
-      internalID: 1046955200
+      spriteID: eacbc249b45ba42f0b9a30900765d064
+      internalID: 384324549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Attack 1_5
+      name: Goblin_Attack-Sheet_5
       rect:
         serializedVersion: 2
         x: 320
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc81cad49678f4471af14bb50bc4e5c5
-      internalID: 302830048
+      spriteID: b6204972c1c104d4d9026acfd71e359c
+      internalID: -1297062721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Attack 1_6
+      name: Goblin_Attack-Sheet_6
       rect:
         serializedVersion: 2
         x: 384
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70a41fa0f33814d96aca3ce82aec9358
-      internalID: -1524614360
+      spriteID: cd2e3463eade0401a9e299e121244bf8
+      internalID: 1693059858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Attack 1_7
+      name: Goblin_Attack-Sheet_7
       rect:
         serializedVersion: 2
         x: 448
@@ -271,29 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45a37d63dac044c458573012817336b7
-      internalID: 1831440776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skeleton_Attack 1_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ebe9e24d24904cf5a588192bf12a99f
-      internalID: 500883546
+      spriteID: c3fcf5561fa1748c08f18fcb24141c86
+      internalID: -370446137
       vertices: []
       indices: 
       edges: []
@@ -309,15 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Skeleton_Attack 1_0: -1486353953
-      Skeleton_Attack 1_1: -826355024
-      Skeleton_Attack 1_2: -1580638736
-      Skeleton_Attack 1_3: 1488416438
-      Skeleton_Attack 1_4: 1046955200
-      Skeleton_Attack 1_5: 302830048
-      Skeleton_Attack 1_6: -1524614360
-      Skeleton_Attack 1_7: 1831440776
-      Skeleton_Attack 1_8: 500883546
+      Goblin_Attack-Sheet_0: -1920768115
+      Goblin_Attack-Sheet_1: 353391173
+      Goblin_Attack-Sheet_2: -1336431367
+      Goblin_Attack-Sheet_3: 1076472857
+      Goblin_Attack-Sheet_4: 384324549
+      Goblin_Attack-Sheet_5: -1297062721
+      Goblin_Attack-Sheet_6: 1693059858
+      Goblin_Attack-Sheet_7: -370446137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

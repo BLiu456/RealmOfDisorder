@@ -99,7 +99,6 @@ public class PlayerMovement : MonoBehaviour
     public void setMaxStamina(float s)
     {
         MaxStamina = s;
-        Stamina = MaxStamina; //Refill stamina 
         StaminaTxt.text = string.Format("{0:0}/{1}", Stamina, MaxStamina);
         StaminaBar.fillAmount = Stamina / MaxStamina;
     }

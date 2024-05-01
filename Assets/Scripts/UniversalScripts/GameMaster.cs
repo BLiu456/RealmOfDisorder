@@ -53,10 +53,17 @@ public class GameMaster : MonoBehaviour
 
     private void increaseSpawnRate()
     {
-        if (spawnCredit <= maxCredit)
+        /*
+         Initially have the spawn rate grow exponentially, it will take about 3 minutes to reach the max credit.
+         Afterwards linearly increase it by 550. This is to slow down the amount of enemies spawning at once,
+         and won't lag the game quickly. 
+         */
+        spawnCredit += spawnCoef * Mathf.Pow(2, 1.5f * world_lvl);
+        if (spawnCredit > maxCredit) 
         {
-            spawnCredit += spawnCoef * Mathf.Pow(2, 1.5f * world_lvl);
-        }   
+            spawnCredit = maxCredit;
+            maxCredit += 550;
+        }
     }
 
     private void activateSpawn()

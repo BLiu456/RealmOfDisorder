@@ -32,6 +32,7 @@ public class Health : MonoBehaviour
 
     public void increaseMaxHp(int maxHp)
     {
+        this.currentHP += maxHp - this.maxHP; //Scale current hp to the new maxHp
         this.maxHP = maxHp;
     }
 
