@@ -91,7 +91,29 @@ public class EnemyObject : MonoBehaviour
 
             if (dropItem != null)
             {
-                GameObject lootObject = Instantiate(dropItem, transform.position, Quaternion.identity); //Drops an item where enemy died
+                float x = transform.position.x;
+                float y = transform.position.y;
+
+                if (x > 150) // When item were to spawn outside of border
+                {
+                    x = 149;
+                }
+                else if (x < -150)
+                {
+                    x = -149;
+                }
+
+                if (y > 150)
+                {
+                    y = 149;
+                }
+                else if (y < -150)
+                {
+                    y = -149;
+                }
+
+                Vector2 pos = new Vector2(x, y);
+                GameObject lootObject = Instantiate(dropItem, pos, Quaternion.identity); //Drops an item where enemy died
             }
         }
 

@@ -70,7 +70,6 @@ public class Player : MonoBehaviour
             if (collision.tag == "Enemy_Atk")
             {
                 audioSource.Play();
-                Debug.Log("hit");
                 Projectile projComp = collision.GetComponent<Projectile>();
                 hpManager.damaged(projComp.applyDamage());
                 StartCoroutine(activateIFrame());
@@ -101,7 +100,6 @@ public class Player : MonoBehaviour
             if (collision.tag == "Enemy_Atk")
             {
                 audioSource.Play();
-                Debug.Log("hit");
                 Projectile projComp = collision.GetComponent<Projectile>();
                 hpManager.damaged(projComp.applyDamage());
                 StartCoroutine(activateIFrame());
