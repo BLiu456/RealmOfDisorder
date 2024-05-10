@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.99, y: -8.4, z: 10}
-  m_LocalScale: {x: 5.2434916, y: 5.2434916, z: 5.2434916}
+  m_LocalScale: {x: 3.5092025, y: 3.5092025, z: 3.5092025}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,15 +101,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd9f00626319cd4aaa990f847f0f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHp: 15
-  effHp: 15
-  basePwr: 10
-  effPwr: 10
+  baseHp: 60
+  effHp: 60
+  basePwr: 15
+  effPwr: 15
   speed: 4
-  baseExp: 1
-  effExp: 0
-  dropRate: 15
-  cost: 30
+  baseExp: 15
+  effExp: 15
+  dropRate: 20
+  cost: 529
   data: {fileID: 11400000, guid: 9cd502eebb4f14446a626de436b9c28f, type: 2}
   player: {fileID: 0}
   gm: {fileID: 0}
@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023c5fd10f89d964fb34ea22a10c3bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 15
-  maxHP: 15
+  currentHP: 60
+  maxHP: 60
   isAlive: 1
 --- !u!61 &2780976998258090891
 BoxCollider2D:
@@ -161,18 +161,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.17858668, y: 0.037707657}
+  m_Offset: {x: 0.08856723, y: -0.024358392}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 3.2, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8809427, y: 0.79164904}
+  m_Size: {x: 1.005075, y: 1.0884864}
   m_EdgeRadius: 0
 --- !u!114 &6789424700897758619
 MonoBehaviour:

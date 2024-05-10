@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.92, y: -0.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.67473, y: 0.67473, z: 0.67473}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,14 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb453d3a8d2f3f458ed2c35e4602332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHp: 8
-  effHp: 8
-  basePwr: 4
-  effPwr: 4
+  baseHp: 15
+  effHp: 15
+  basePwr: 6
+  effPwr: 6
   speed: 1
-  baseExp: 5
-  effExp: 5
-  dropRate: 12
+  baseExp: 10
+  effExp: 10
+  dropRate: 18
   cost: 132
   data: {fileID: 11400000, guid: 66b2be48343a9c64bb99cf058c017550, type: 2}
   player: {fileID: 0}
@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023c5fd10f89d964fb34ea22a10c3bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 8
-  maxHP: 8
+  currentHP: 15
+  maxHP: 15
   isAlive: 1
 --- !u!114 &3645950617876267740
 MonoBehaviour:

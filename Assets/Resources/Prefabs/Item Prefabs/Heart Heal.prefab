@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.07, y: -3.4971, z: 0}
-  m_LocalScale: {x: 4, y: 3.8568, z: 1}
+  m_LocalScale: {x: 3.09492, y: 2.9841218, z: 0.77373}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,9 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Heart Container
   desc: Heals player for 50% of their max hp
+  popMsg: 
   sprite: {fileID: 21300000, guid: 6541a3021a95ea04d92f210d747193cf, type: 3}
-  uiPrefab: {fileID: 0}
-  heartUIPrefab: {fileID: 0}
 --- !u!61 &3203454751782175543
 BoxCollider2D:
   m_ObjectHideFlags: 0

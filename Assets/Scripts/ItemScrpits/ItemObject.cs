@@ -8,6 +8,16 @@ public abstract class ItemObject : MonoBehaviour
     public string desc;
     public string popMsg;
     public Sprite sprite;
+    private float timer = 0;
+
+    public void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= 30f) //Despawn object after 30 seconds
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public virtual void OnTriggerEnter2D(Collider2D other) 
     {

@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.82, y: -3.21, z: 10}
-  m_LocalScale: {x: 4.8777366, y: 4.8777366, z: 4.8777366}
+  m_LocalScale: {x: 2.6040406, y: 2.6040406, z: 2.6040406}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,11 +108,12 @@ MonoBehaviour:
   speed: 10
   baseExp: 5
   effExp: 5
-  dropRate: 12
+  dropRate: 15
   cost: 33
   data: {fileID: 11400000, guid: e87a390f68c4a104c99e7fb91c92d4fe, type: 2}
   player: {fileID: 0}
   gm: {fileID: 0}
+  audioSource: {fileID: 0}
   spdScaler: 2
   rb: {fileID: 6875689307539255207}
 --- !u!114 &7920337116642445090
@@ -162,7 +163,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006750405, y: -0.007488936}
+  m_Offset: {x: 0.006750405, y: 0.010908857}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -173,7 +174,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5171207, y: 0.7441245}
+  m_Size: {x: 0.5171207, y: 0.7073289}
   m_EdgeRadius: 0
 --- !u!50 &6875689307539255207
 Rigidbody2D:

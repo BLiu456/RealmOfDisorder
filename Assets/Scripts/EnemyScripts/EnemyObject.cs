@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 public class EnemyObject : MonoBehaviour
 {
@@ -112,7 +115,7 @@ public class EnemyObject : MonoBehaviour
                     y = -149;
                 }
 
-                Vector2 pos = new Vector2(x, y);
+                Vector3 pos = new Vector3(x, y, 0);
                 GameObject lootObject = Instantiate(dropItem, pos, Quaternion.identity); //Drops an item where enemy died
             }
         }

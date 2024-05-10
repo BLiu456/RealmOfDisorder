@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.2063255, y: -0.036679953, z: 0}
-  m_LocalScale: {x: 0.25754, y: 0.25754, z: 0.25754}
+  m_LocalScale: {x: 0.17012835, y: 0.17012835, z: 0.17012835}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Exp Scroll
   desc: Obtain 25 exp
+  popMsg: 
   sprite: {fileID: 0}
-  uiPrefab: {fileID: 0}
   exp: 25
 --- !u!61 &2281026717279138519
 BoxCollider2D:
