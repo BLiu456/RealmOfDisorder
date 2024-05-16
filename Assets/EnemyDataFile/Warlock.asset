@@ -15,6 +15,6 @@ MonoBehaviour:
   health: 50
   power: 10
   speed: 0
-  exp: 20
+  exp: 30
   dropRate: 5
   cost: 2116

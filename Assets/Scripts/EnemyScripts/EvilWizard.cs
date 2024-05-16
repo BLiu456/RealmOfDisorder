@@ -91,8 +91,8 @@ public class EvilWizard : RangeEnemy
     public override void scaleStats()
     {
         float lvl = gm.GetComponent<GameMaster>().getLvl();
-        effHp = (int)((float)baseHp * Mathf.Pow(4f, lvl));
-        effPwr = (int)((float)basePwr * Mathf.Pow(3f, lvl));
+        effHp = (int)((float)baseHp * Mathf.Pow(4f, lvl) + (100f * lvl));
+        effPwr = (int)((float)basePwr * Mathf.Pow(3f, lvl) + (10f * lvl));
         effExp = (int)((float)baseExp * Mathf.Pow(1.5f, lvl));
         numProj += (int)lvl - 2;
 
