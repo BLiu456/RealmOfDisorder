@@ -56,8 +56,8 @@ public class EnemyObject : MonoBehaviour
     public virtual void scaleStats()
     {
         float lvl = gm.GetComponent<GameMaster>().getLvl();
-        effHp = (int)(((float)baseHp * Mathf.Pow(2.5f, lvl)) + (5f * Mathf.Pow(1.5f, lvl)));
-        effPwr = (int)(((float)basePwr * Mathf.Pow(2f, lvl)) + (3f * Mathf.Pow(1.5f, lvl)));
+        effHp = (int)(((float)baseHp * Mathf.Pow(2.5f, lvl)) + (8f * Mathf.Pow(lvl, 3)));
+        effPwr = (int)(((float)basePwr * Mathf.Pow(2f, lvl)) + (4f * Mathf.Pow(lvl, 3)));
         effExp = (int)((float)baseExp * (1f + lvl));
 
         GetComponent<Health>().setHealthValues(effHp, effHp);

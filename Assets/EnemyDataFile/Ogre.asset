@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ogre
   m_EditorClassIdentifier: 
   health: 60
-  power: 15
+  power: 20
   speed: 4
   exp: 20
   dropRate: 20
