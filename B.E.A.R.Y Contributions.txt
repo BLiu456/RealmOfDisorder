@@ -1,0 +1,74 @@
+﻿B.E.A.R.Y Contributions
+Benjamin Liu - Designed the enemy ai, how the enemies spawned and the items. Worked on balance of the game.
+
+
+Erica Tan - Tile map creation / colliders / player movement and shooting
+
+
+Angel Rodriguez - Designed original sprites (goblin, skeleton, ogre, player, hat), implemented animations for player and some enemies, and programmed animations to transition from action to action.
+
+
+Ricky Tseng - Created main menu, Stamina script and ui, and designed the map
+
+
+Yuliana Joya - Put in sound effects and helped create the inventory
+
+
+Final Build Link (Should be the final branch): https://github.com/BLiu456/RealmOfDisorder/tree/Final
+ 
+Other sources
+Background Music - 
+“Crimson Moon” by PeriTune | https://peritune.com/
+Music promoted by https://www.chosic.com/free-music/all/
+Creative Commons CC BY 4.0
+https://creativecommons.org/licenses/by/4.0/
+
+
+Gameover Music -
+“Magical Game Over” provided on https://mixkit.co/free-sound-effects/game-over/
+
+
+Sound Effects -
+“Magical fast wind woosh 2” provided on https://www.zapsplat.com/music/magical-fast-wind-whoosh-2/
+
+
+“Fantasy, dark magic spell woosh, project, whizz 1” provided on https://www.zapsplat.com/music/fantasy-dark-magic-spell-whoosh-project-whizz-1/
+
+
+“Goblin short unhappy throaty grunt 4” provided on https://www.zapsplat.com/music/goblin-short-unhappy-throaty-grunt-4/
+
+
+“Cartoon male, man, grunt 1” provided on https://www.zapsplat.com/music/cartoon-male-man-grunt-1/
+
+
+Undead Archer Sprite - https://opengameart.org/content/skeleton-archer-0
+
+
+Warlock Sprite - https://opengameart.org/content/wizard-0
+
+
+Evil Wizard Sprite - https://opengameart.org/content/battle-for-wesnoth-liberty-rogue-mage-shadow-mage-shadow-lord
+
+
+Bear Sprite - https://opengameart.org/content/bear-0
+
+
+Sword Sprite - https://assetstore.unity.com/packages/2d/textures-materials/20-evolving-fantasy-rpg-weapons-61204
+
+
+Heart Sprite - https://opengameart.org/content/heart-3
+
+
+Armor Sprite - https://ravenmore.itch.io/fantasy-icon-pack
+
+
+Scroll and Tome sprites - https://aeynit.itch.io/sketch-fantasy-items
+
+
+Necklace sprite - https://opengameart.org/content/cc0-jewelry-icons
+
+
+Tile map: https://schwarnhild.itch.io/basic-tileset-and-asset-pack-32x32-pixels?download
+
+
+Skull Sprite - https://skalding.itch.io/skull-sprite-002
